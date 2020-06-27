@@ -23,7 +23,10 @@ geographical hotspots
 cdc/WHO/local public health guidelines & corresponding virus response in that area
 
 
-<img width="762" alt="Screen Shot 2020-06-27 at 10 53 08 AM" src="https://user-images.githubusercontent.com/64511825/85927822-d8feb400-b865-11ea-8629-a976d3279e3a.png">
+![](https://files.slack.com/files-pri/T01345N0WRE-F015Z4GDPJA/screen_shot_2020-06-27_at_10.58.29_am.png)
 
-<br>
+![](https://files.slack.com/files-pri/T01345N0WRE-F0164ETPP45/screen_shot_2020-06-27_at_10.53.08_am.png)
 
+![](https://files.slack.com/files-pri/T01345N0WRE-F016JEZEG9F/screen_shot_2020-06-27_at_10.58.38_am.png)
+
+<img width="2048" alt="Screen Shot 2020-06-27 at 10 58 38 AM" src="https://user-images.githubusercontent.com/61152071/85927825-dbf9a480-b865-11ea-811e-a848c0329bac.png">
