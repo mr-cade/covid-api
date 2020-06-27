@@ -1,8 +1,8 @@
-var region = prompt("Enter Desired Region")
+var region = prompt("select a region")
 var covidQuery = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://coronavirus-map.p.rapidapi.com/v1/summary/region?region=" + region,
+	"url": "https://coronavirus-map.p.rapidapi.com/v1/spots/region?region=" + region,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
