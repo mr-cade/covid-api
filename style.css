@@ -33,7 +33,7 @@ a {
 .header ul a {
     display: block;
     padding: 20px;
-    border-right: 1px solid #fff;
+    /* border-right: 1px solid #fff; */
     text-decoration: none;
 }
 
@@ -61,7 +61,7 @@ a {
 }
 
 .header .menu-icon .nav-icon {
-    background: gray;
+    background: #fff;
     display: block;
     height: 2px;
     width: 18px;
@@ -70,7 +70,7 @@ a {
 }
 
 .header .menu-icon .nav-icon:before {
-    background: gray;
+    background: #fff;
     content: "";
     display: block;
     height: 100%;
@@ -81,7 +81,7 @@ a {
 }
 
 .header .menu-icon .nav-icon::after {
-    background: gray;
+    background: #fff;
     content: "";
     display: block;
     height: 100%;
@@ -98,3 +98,37 @@ a {
 .header .menu-btn:checked ~ .menu {
     max-height: 240px;
 }
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top:0;
+
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+ @media (min-width: 48em) {
+
+        .header li{
+            float: left;
+        }
+        .header li a{
+            padding: 20px 30px;
+        }
+        .header .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+        .header .menu-icon{
+            display: none;
+        }
+    }
