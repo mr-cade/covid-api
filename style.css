@@ -3,3 +3,17 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #000;
+}
+
+a {
+    color: #fff;
+}
+
+.header {
+    background-color: rgb(82, 3, 3);
+}
