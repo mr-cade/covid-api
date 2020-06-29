@@ -5,9 +5,12 @@
 }
 
 body {
+    background-image: url(./assets/152-1523551_virus.jpg);
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #000;
+    /* background-color: #000; */
 }
 
 a {
