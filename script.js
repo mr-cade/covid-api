@@ -12,7 +12,7 @@ var covidQuery = {
 $.ajax(covidQuery).done(function (response) {
     console.log(response);
     console.log(response.data.summary.deaths)
-    var deathToll = $("<h2>").text("total deaths: " + response.data.summary.deaths);
+    var deathToll = $("<h2>").text("Total Deaths: " + response.data.summary.deaths);
     $("header").append(deathToll)
 });
 

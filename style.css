@@ -13,3 +13,25 @@ body {
     /* background-color: #000; */
 }
 
+header  {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+.navbar-fixed {
+ margin-bottom: 50px;
+
+}
+
+.col {
+    margin: auto;
+    width: 700px;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(65, 65, 65, 0.8);
+}
