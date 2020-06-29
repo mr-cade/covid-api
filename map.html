@@ -1,44 +1,60 @@
-<!doctype html>
 <html lang="en">
-  <head>
-    <title>Wuhan Tracking</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!--CSS link-->
+  <link rel="stylesheet" href="./style.css">
+  <title>Covid-19 Tracking</title>
+</head>
+<body>
+<!--Nav Bar-->
+  <div class="navbar-fixed">
+    <nav class="nav-wrapper" style="background-color: rgb(82, 3, 3); height: 90px;">
+      <div class="container">
+        <a href="./index.html" class="brand-logo">
+            <img src="./assets/covidLogo.png" width="200" height="90" alt="covid-logo">
+        </a>
+        <a href="./index.html" class="sidenav-trigger" data-target="mobile-links">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./map.html">Map & Trends</a></li>
+          <li><a href="./news.html">News & Information</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+<!--Nar bar mobile menu-->
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="map.html">Map & Trends</a></li>
+    <li><a href="news.html">News & Information</a></li>
+  </ul>
+  
+  
+    <h1>Map</h1>
+ 
 
-    <!-- **** MUST USE ANOTHER FRAMEWORK BESIDES BOOTSTRAP *** Bootstrap CSS -->
-    <link rel="stylesheet" href="style.css">
-   <!-- Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Coda&family=Cookie&family=DM+Sans:wght@700&family=Homemade+Apple&family=Lilita+One&family=Merriweather:wght@700&family=Open+Sans&family=Overpass:wght@900&family=Russo+One&family=Sacramento&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header class="header">
-          <a href="index.html" class="logo">
-              <img src="./assets/covidLogo.png" width="200" height="90" alt="covid-logo">
-          </a>
-          <input class="menu-btn" type="checkbox" id="menu-btn"/>
-          <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
-          <ul class="menu">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./map.html">Map and Trends</a></li>
-            <li><a href="news.html">News and Information</a></li>
-          </ul>
-    </header>  
 
 
 
 
 
 
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>
 </body>
 </html>

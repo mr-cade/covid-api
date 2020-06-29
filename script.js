@@ -15,3 +15,8 @@ $.ajax(covidQuery).done(function (response) {
     var deathToll = $("<h2>").text("total deaths: " + response.data.summary.deaths);
     $("header").append(deathToll)
 });
+
+
+
+
+
