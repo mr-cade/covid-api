@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(./assets/152-1523551_virus.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-color: #000; */
+}
+
+header  {
+    color: white;
+    font-size: 18px;
+}
+
+h1 {
+    color: white;
+    font-size: 16px;
+}
+
+.navbar-fixed {
+ margin-bottom: 50px;
+
+}
+
+.col {
+    margin: auto;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(39, 39, 39, 0.8);
+}
