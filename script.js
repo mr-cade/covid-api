@@ -98,8 +98,15 @@ $.ajax({
     console.log(response);
     // append to DOM
     for (var i = 0; i < 10; i++) {
+        var headlineEl = $("<li>").text(response.response.docs[i].headline.main)
         var abstractEl = $("<li>").text(response.response.docs[i].abstract)
+        var bylineEl = $("<li>").text(response.response.docs[i].byline.original)
+        var readLink = $("<a href='" + response.response.docs[i].web_url + "'>" + "Read Here" + "</a>")
+        $(".newsStories").append(headlineEl)
         $(".newsStories").append(abstractEl)
+        $(".newsStories").append(bylineEl)
+        $(".newsStories").append(readLink)
+        $(".newsStories").append($("<br>"))
         $(".newsStories").append($("<br>"))
     }
 })
