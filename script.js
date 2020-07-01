@@ -16,9 +16,11 @@ $.ajax(covidQuery).done(function (response) {
     console.log(response);
     var activeCases = $("<h2>").text(region + " active cases: " + response.data.summary.active_cases);
     var totalCases = $("<h2>").text(region + " total cases: " + response.data.summary.total_cases);
+    var totalRecovered = $("<h2>").text(region + " total recoveries: " + response.data.summary.recovered);
     var deathToll = $("<h2>").text(region + " total deaths: " + response.data.summary.deaths);
     $(".location").append(activeCases)
     $(".location").append(totalCases)    
+    $(".location").append(totalRecovered)    
     $(".location").append(deathToll)
 });
 
@@ -39,9 +41,11 @@ $.ajax(worldStats).done(function (response) {
     // world wide stats
     var activeCases = $("<h2>").text("World wide active cases: " + response.data.summary.active_cases);
     var totalCases = $("<h2>").text("World wide total cases: " + response.data.summary.total_cases);
+    var totalRecovered = $("<h2>").text("World wide recoveries: " + response.data.summary.recovered);
     var deathToll = $("<h2>").text("World wide total deaths: " + response.data.summary.deaths);
     $(".location").append(activeCases)
     $(".location").append(totalCases)    
+    $(".location").append(totalRecovered)    
     $(".location").append(deathToll)
 });
 
@@ -56,10 +60,21 @@ var mapTileQuery = {
 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 // "Map data © OpenStreetMap contributors." -- required on page to give proper credit
-$.ajax(mapTileQuery).done(function (response) {
-	// console.log(response);
-});
+// $.ajax(mapTileQuery).done(function (response) {
+// 	console.log(response);
+// });
 
 // var mapQuery = {
 //     "url": "https://bing.com/maps/default.aspx?cp=37.814692~-122.477339&style=o&lvl=1&dir=0&scene=1140291",
