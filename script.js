@@ -10,32 +10,65 @@ var covidQuery = {
 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
 	}
 };
-// pulls data from covid api and appends death toll to header
+// pulls data from covid api and appends death toll to header -- add other data points and format numbers
 $.ajax(covidQuery).done(function (response) {
+    // searched location
     console.log(response);
-    console.log(response.data.summary.deaths)
+    var activeCases = $("<h2>").text(region + " active cases: " + response.data.summary.active_cases);
+    var totalCases = $("<h2>").text(region + " total cases: " + response.data.summary.total_cases);
     var deathToll = $("<h2>").text(region + " total deaths: " + response.data.summary.deaths);
-    $("header").append(deathToll)
+    $(".location").append(activeCases)
+    $(".location").append(totalCases)    
+    $(".location").append(deathToll)
 });
-// NYT Query
-function buildNYTQuery() {
-    // queryURL is the url we'll use to query the API
-    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
-  
-    // Begin building an object to contain our API call's query parameters
-    // Set the API key
-    var queryParams = { "api-key": "4fa5dc59-0017-4c4f-a967-ab6b52b33d2d" };
-  
-    // Grab text the user typed into the search input, add to the queryParams object
-    queryParams = "covid"
-  
-    // Logging the URL so we have access to it for troubleshooting
-    console.log("---------------\nURL: " + queryURL + "\n---------------");
-    console.log(queryURL + $.param(queryParams));
-    return queryURL + $.param(queryParams);
-  }
-buildNYTQuery()
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(console.log(response));
+
+
+//   create aside with worldwide covid stats
+var worldStats = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://coronavirus-map.p.rapidapi.com/v1/summary/latest",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
+		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+	}
+}
+$.ajax(worldStats).done(function (response) {
+    console.log(response);
+    // world wide stats
+    var activeCases = $("<h2>").text("World wide active cases: " + response.data.summary.active_cases);
+    var totalCases = $("<h2>").text("World wide total cases: " + response.data.summary.total_cases);
+    var deathToll = $("<h2>").text("World wide total deaths: " + response.data.summary.deaths);
+    $(".location").append(activeCases)
+    $(".location").append(totalCases)    
+    $(".location").append(deathToll)
+});
+
+// Query for map
+var mapTileQuery = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://maptiles.p.rapidapi.com/local/osm/v1/3/6/3.png",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "maptiles.p.rapidapi.com",
+		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+	}
+}
+// "Map data © OpenStreetMap contributors." -- required on page to give proper credit
+$.ajax(mapTileQuery).done(function (response) {
+	// console.log(response);
+});
+
+// var mapQuery = {
+//     "url": "https://bing.com/maps/default.aspx?cp=37.814692~-122.477339&style=o&lvl=1&dir=0&scene=1140291",
+//     "method": "GET"
+// }
+// $.ajax(mapQuery).done(function (response) {
+//     console.log(response)
+// })
+
+
+
+// Add news search
