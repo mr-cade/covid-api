@@ -10,7 +10,7 @@ var covidQuery = {
 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
 	}
 };
-// pulls data from covid api and appends stats  to header --  format numbers and data display
+// pulls data from covid api and appends stats  to header
 $.ajax(covidQuery).done(function (response) {
     // searched location
     console.log(response);
@@ -28,10 +28,10 @@ $.ajax(covidQuery).done(function (response) {
     var deathToll = $("<h2>").text(region + " total deaths: " + deathPath);
     
     // add stats to DOM
-    $(".location").append(activeCases)
-    $(".location").append(totalCases)    
-    $(".location").append(totalRecovered)    
-    $(".location").append(deathToll)
+    $(".location").append(activeCases);
+    $(".location").append(totalCases);    
+    $(".location").append(totalRecovered);    
+    $(".location").append(deathToll);
 });
 
 //   create aside with worldwide covid stats
@@ -55,17 +55,48 @@ $.ajax(worldStats).done(function (response) {
     var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
     // world wide stat elements created
-    var activeCases = $("<h2>").text("World wide active cases: " + activePath);
-    var totalCases = $("<h2>").text("World wide total cases: " + totalPath);
-    var totalRecovered = $("<h2>").text("World wide recoveries: " + recoveredPath);
-    var deathToll = $("<h2>").text("World wide total deaths: " + deathPath);
+    var activeCases = $("<h2>").text("Worldwide active cases: " + activePath);
+    var totalCases = $("<h2>").text("Worldwide total cases: " + totalPath);
+    var totalRecovered = $("<h2>").text("Worldwide recoveries: " + recoveredPath);
+    var deathToll = $("<h2>").text("Worldwide total deaths: " + deathPath);
     
     // stats added to DOM
-    $(".worldWide").append(activeCases);
-    $(".worldWide").append(totalCases);  
-    $(".worldWide").append(totalRecovered);    
-    $(".worldWide").append(deathToll);
+    $(".worldwide").append(activeCases);
+    $(".worldwide").append(totalCases);  
+    $(".worldwide").append(totalRecovered);    
+    $(".worldwide").append(deathToll);
 });
+
+/** NYT Article Search
+ * @returns {string} URL for NYT API
+ */
+function buildQueryURL() {
+    // queryURL is the url we'll use to query the API
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+  
+    // Begin building an object to contain our API call's query parameters
+    // Set the API key
+    var queryParams = { "api-key": "iv2BweW9nX6XL4Afc9BhmswYFp8lNxnT" };
+  
+    // sets to search for articles associated with covid
+    queryParams.q = "covid"
+  
+    // Logging the URL so we have access to it for troubleshooting
+    console.log("---------------\nURL: " + queryURL + "\n---------------");
+    console.log(queryURL + $.param(queryParams));
+    return queryURL + $.param(queryParams);
+  }
+  
+var queryURL = buildQueryURL();
+  
+// Make the AJAX request to the API - GETs the JSON data at the queryURL.
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).done(function (response) {
+    console.log(response);
+})
+
 
 // potential buttons
 $("worldBtn").on("click", function() {
