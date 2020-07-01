@@ -69,6 +69,7 @@ $.ajax(worldStats).done(function (response) {
 
 /** NYT Article Search
  * @returns {string} URL for NYT API
+ * @param {object} NYTData
  */
 function buildQueryURL() {
     // queryURL is the url we'll use to query the API
@@ -95,6 +96,12 @@ $.ajax({
     method: "GET"
 }).done(function (response) {
     console.log(response);
+    // append to DOM
+    for (var i = 0; i < 10; i++) {
+        var abstractEl = $("<li>").text(response.response.docs[i].abstract)
+        $(".newsStories").append(abstractEl)
+        $(".newsStories").append($("<br>"))
+    }
 })
 
 
