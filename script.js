@@ -22,12 +22,13 @@ $.ajax(covidQuery).done(function (response) {
     var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
     // create stat elements
-    var activeCases = $("<h2>").text(region + " active cases: " + activePath);
-    var totalCases = $("<h2>").text(region + " total cases: " + totalPath);
-    var totalRecovered = $("<h2>").text(region + " total recoveries: " + recoveredPath);
-    var deathToll = $("<h2>").text(region + " total deaths: " + deathPath);
+    var activeCases = $("<p>").text("Active cases: " + activePath);
+    var totalCases = $("<p>").text("Total cases: " + totalPath);
+    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<p>").text("Total deaths: " + deathPath);
     
     // add stats to DOM
+    $(".location").text(region);
     $(".location").append(activeCases);
     $(".location").append(totalCases);    
     $(".location").append(totalRecovered);    
@@ -55,10 +56,10 @@ $.ajax(worldStats).done(function (response) {
     var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
     // world wide stat elements created
-    var activeCases = $("<h2>").text("Worldwide active cases: " + activePath);
-    var totalCases = $("<h2>").text("Worldwide total cases: " + totalPath);
-    var totalRecovered = $("<h2>").text("Worldwide recoveries: " + recoveredPath);
-    var deathToll = $("<h2>").text("Worldwide total deaths: " + deathPath);
+    var activeCases = $("<p>").text("Active cases: " + activePath);
+    var totalCases = $("<p>").text("Total cases: " + totalPath);
+    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<p>").text("Total deaths: " + deathPath);
     
     // stats added to DOM
     $(".worldwide").append(activeCases);
@@ -98,16 +99,16 @@ $.ajax({
     console.log(response);
     // append to DOM
     for (var i = 0; i < 10; i++) {
-        var headlineEl = $("<li>").text(response.response.docs[i].headline.main)
+        var headlineEl = $("<li class='newsTitles'>").text(response.response.docs[i].headline.main)
         var abstractEl = $("<li>").text(response.response.docs[i].abstract)
-        var bylineEl = $("<li>").text(response.response.docs[i].byline.original)
+        var bylineEl = $("<li class='newsByline'>").text(response.response.docs[i].byline.original)
         var readLink = $("<a href='" + response.response.docs[i].web_url + "'>" + "Read Here" + "</a>")
-        $(".newsStories").append(headlineEl)
-        $(".newsStories").append(abstractEl)
-        $(".newsStories").append(bylineEl)
-        $(".newsStories").append(readLink)
-        $(".newsStories").append($("<br>"))
-        $(".newsStories").append($("<br>"))
+        $(".newsStories").append(headlineEl);
+        $(".newsStories").append(abstractEl);
+        $(".newsStories").append(bylineEl);
+        $(".newsStories").append(readLink);
+        $(".newsStories").append($("<br>"));
+        $(".newsStories").append($("<br>"));
     }
 })
 

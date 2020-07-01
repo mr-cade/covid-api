@@ -38,6 +38,14 @@ h1 {
     background-color: rgba(39, 39, 39, 0.8);
 }
 
+.newsTitles {
+    font-size: 24px;
+}
+
 .newsStories {
     color: white;
+}
+
+.newsByline {
+    font-style: italic;
 }
