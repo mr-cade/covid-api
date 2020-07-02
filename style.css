@@ -87,8 +87,8 @@ li {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    margin:10px;
-    margin-left: 60px;
+    /* margin:10px; */
+    /* margin-left: 60px; */
     font-size: 12px;
     justify-content: center;
     align-items: center;
