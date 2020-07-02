@@ -42,18 +42,18 @@
   
 
 <!--Informations Btn-->
-<div class="col s-4 m-12)" id="infoBtn">
-  <button class="btn btn-large z-depth-3" id="symtoms"><i class="fas fa-head-side-cough"></i> Symtoms</button>
-  <button class="btn btn-large z-depth-3" id="preventation"><i class="fas fa-head-side-mask"></i> Preventation</button>
-  <button class="btn btn-large z-depth-3" id="treatment"><i class="fas fa-prescription-bottle-alt"></i> Treatment</button>
-</div>
-</div>
+<div class="container">
+    <div class="col s-4 m-12)" id="infoBtn">
+      <button class="btn btn-large z-depth-3" id="symtoms"><a href="#symtomsInfo"><i class="fas fa-head-side-cough"></i> Symtoms</a></button>
+      <button class="btn btn-large z-depth-3" id="preventation"><a href="#preventationInfo"><i class="fas fa-head-side-mask"></i> Preventation</a></button>
+      <button class="btn btn-large z-depth-3" id="treatment"><i class="fas fa-prescription-bottle-alt"></i> Treatment</button>
+    </div>
 </div>
 
 <!-- Facts about corvid-19-->
 <div class="container" id="facts">
   <div class="card-stacked">
-      <div class="card-content" style="padding: 10px; background-color: rgba(12, 12, 12, 0.904);">
+      <div class="card-content z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
         <h3>Facts About Covid-19</h3>
         <p><i class="fas fa-virus"></i>  Coronavirus (COVID-19) is an illness caused by a virus that can spread from person
           to person.</p><br>
@@ -72,25 +72,53 @@
 <!-- Health Information-->
 <div class="container" id="HealthInfo" style="margin-top: 30px;">
   <div class="card-stacked">
-      <div class="card-content" style="padding: 10px; background-color: rgba(12, 12, 12, 0.904);">
+      <div class="card-content z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+       <!--symptoms-->
         <h2 style="font-size: 22px; text-align: center;"><i class="fas fa-exclamation-triangle" style="color: rgb(168, 6, 6);"></i> Health Information</h2>
-        <h3 style="text-align: left;" id="symtomsInfo"><i class="fas fa-head-side-cough" style="font-size: 20px;"></i> Symtoms</h3>
+        <h3 style="text-align: left;" id="symtomsInfo"><i class="fas fa-head-side-cough" style="font-size: 20px;"></i> Symptoms</h3>
         <p style="font-size: 16px; color: white;">Symptoms may appear 2-14 days after exposure to the virus. People with these symptoms may have COVID-19:</p><br>
-        <li>Fever or chills</li>
-        <li>Cough</li>
-        <li>Shortness of breath or difficulty breathing</li>
-        <li>Fatigue</li>
-        <li>Muscle or body aches</li>
-        <li>Headache</li>
-        <li>New loss of taste or smell</li>
-        <li>Congestion or runny nose</li>
-        <li>Nausea or vomiting</li>
-        <li>Diarrhea</li>
+          <li>Fever or chills</li>
+          <li>Cough</li>
+          <li>Shortness of breath or difficulty breathing</li>
+          <li>Fatigue</li>
+          <li>Muscle or body aches</li>
+          <li>Headache</li>
+          <li>New loss of taste or smell</li>
+          <li>Congestion or runny nose</li>
+          <li>Nausea or vomiting</li>
+          <li>Diarrhea</li>
+              <br><br>
+        <p style="font-size: 16px; color: white;">Look for emergency warning signs for COVID-19. If someone is showing any of these signs, seek emergency medical care immediately:</p>
+          <li>Trouble breathing</li>
+          <li>Persistent pain or pressure in the chest</li>
+          <li>New confusion</li>
+          <li>Inability to wake or stay awake</li>
+          <li>Bluish lips or face</li>
+              <br><br>
+        <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" style="font-size: 14px;">Learn more on cdc.gov</a></button>
       </div>
   </div>
 </div>
 
-
+<!--Preventation-->
+<div class="container" id="HealthInfo" style="margin-top: 30px;">
+  <div class="card-stacked">
+      <div class="card-content z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+        <h3 style="text-align: left;" id="preventationInfo"><i class="fas fa-head-side-mask" style="font-size: 20px;"></i> Preventation</h3>
+        <p style="font-size: 16px; color: white;">The best way to prevent illness is to avoid being exposed to this virus. 
+          Learn how COVID-19 spreads and practice these actions to help prevent the spread of this illness.</p><br>
+          <p style="font-size: 16px; color: white;">To help prevent the spread of COVID-19, everyone should: </p><br>
+          <li>Clean your hands often, either with soap and water for 20 seconds or a hand sanitizer that contains at least 60% alcohol.</li>
+          <li>Avoid close contact with people who are sick.</li>
+          <li>Put distance between yourself and other people (at least 6 feet).</li>
+          <li>Cover your mouth and nose with a cloth face cover when around others.</li>
+          <li>Cover your cough or sneeze with a tissue, then throw the tissue in the trash.</li>
+          <li>Clean and disinfect frequently touched objects and surfaces daily.</li>
+              <br><br>
+        <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html" style="font-size: 14px;">Learn more on cdc.gov</a></button>
+      </div>
+  </div>
+</div>
   
 
 

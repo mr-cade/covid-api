@@ -42,6 +42,13 @@ h3 {
     font-family: 'Fira Sans', sans-serif;
 }
 
+a {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+
+
 li {
     color: white;
 }
@@ -75,25 +82,18 @@ li {
 
 /*news.html*/
 
-/* #facts {
-    background-color: rgba(243, 243, 243, 0.8);
-    color: black;
-    font-family: 'Fira Sans', sans-serif;
-    margin: auto;
-    /* padding: 20px;
-    margin-left: 20px; */
-    /* font-size: 12px;
-} */ 
 
-#symtoms, #preventation, #treatment {
+#symtoms, #preventation, #treatment, #learn-more {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
     margin:10px;
-    margin-left: 20px;
+    margin-left: 60px;
     font-size: 12px;
+    justify-content: center;
+    align-items: center;
 }
-#symtoms:hover, #preventation:hover, #treatment:hover{
+#symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover{
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
 }
