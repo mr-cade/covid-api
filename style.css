@@ -18,13 +18,18 @@ header  {
     font-size: 18px;
 }
 
+p{
+    font-size: 12px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
 h1 {
     color: white;
     font-size: 16px;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -47,27 +52,35 @@ h3 {
     color: rgb(39, 39, 39);
 }
 
-#world, #us {
+#world, #us , #trends {
     background-color: rgb(250, 250, 250);
+    font-family: 'Fira Sans', sans-serif;
     color: rgb(39, 39, 39);
+    margin: auto;
+    text-align: center;
 }
 
 /*news.html*/
 
-#facts {
+/* #facts {
     background-color: rgba(243, 243, 243, 0.8);
     color: black;
     font-family: 'Fira Sans', sans-serif;
     margin: auto;
-    padding: 20px;
-    margin-left: 20px;
-    font-size: 14px;
-}
+    /* padding: 20px;
+    margin-left: 20px; */
+    /* font-size: 12px;
+} */ 
 
 #symtoms, #preventation, #treatment {
     background-color: rgba(243, 243, 243, 0.8);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    margin:10px
+    margin:10px;
+    margin-left: 20px;
+    font-size: 12px;
 }
-
+#symtoms:hover, #preventation:hover, #treatment:hover{
+    background-color: rgba(43, 43, 43, 0.8);
+    color: white;
+}
