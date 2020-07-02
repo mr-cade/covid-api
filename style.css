@@ -44,7 +44,7 @@ h3 {
 
 a {
     color: black;
-    font-size: 18px;
+    font-size: 12px;
     text-align: center;
 }
 
@@ -80,20 +80,30 @@ li {
     text-align: center;
 }
 
+
+
+
 /*news.html*/
 
+#infoBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #symtoms, #preventation, #treatment, #learn-more {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    /* margin:10px; */
-    /* margin-left: 60px; */
+    margin-left: 15px;
+    margin-bottom: 20px;
     font-size: 12px;
-    justify-content: center;
-    align-items: center;
 }
 #symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover{
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
+}
+
+.card-content {
+    background-color: rgba(12, 12, 12, 0.904);
 }
