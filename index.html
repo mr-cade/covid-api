@@ -5,6 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap" rel="stylesheet">
+  <!--Font Awewome-->
+  <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <!--CSS link-->
@@ -37,18 +45,22 @@
     <li><a href="news.html">Trends & Information</a></li>
   </ul>
   
-  <!--Total Deaths-->
-  <div class="col s12">
-      <div class="card-stacked">
+<!--Search + Worldwide Deaths-->
+<div class="container" id="main">
+    <div class="card-stacked">
         <div class="card-content">
-          <header class="location"></header>
+            <header class="location"></header>
         </div>
-        <div class="card-stacked">
-            <div class="card-content">
-              <header class="worldWide"></header>
-            </div>
-      </div>
-  </div>
+    </div>
+</div>
+<br>
+<div class="container" id="world-stats">
+    <div class="card-stacked">
+        <div class="card-content">
+            <header class="worldwide">Worldwide Stats</header>
+        </div>
+    </div>
+</div>
 
 <!--Search Regions-->
 <!-- <form id="regions">
@@ -70,19 +82,15 @@
 
   <!--Map Links-->
   <div class="container">
-  <button class="btn btn-large">World</button>
-  <button class="btn btn-large"> US </button>
+  <button class="btn btn-large " id="world">World</button>
+  <button class="btn btn-large " id="us"> US </button>
   </div>
-
-
-
-
-
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="script.js"></script>
+    
   <script>
     $(document).ready(function(){
       $('.sidenav').sidenav();

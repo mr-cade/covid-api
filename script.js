@@ -10,18 +10,30 @@ var covidQuery = {
 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
 	}
 };
-// pulls data from covid api and appends death toll to header -- add other data points and format numbers
+// pulls data from covid api and appends stats  to header
 $.ajax(covidQuery).done(function (response) {
     // searched location
     console.log(response);
-    var activeCases = $("<h2>").text(region + " active cases: " + response.data.summary.active_cases);
-    var totalCases = $("<h2>").text(region + " total cases: " + response.data.summary.total_cases);
-    var deathToll = $("<h2>").text(region + " total deaths: " + response.data.summary.deaths);
-    $(".location").append(activeCases)
-    $(".location").append(totalCases)    
-    $(".location").append(deathToll)
-});
+    
+    // format numbers
+    var activePath = new Intl.NumberFormat().format(response.data.summary.active_cases);
+    var totalPath = new Intl.NumberFormat().format(response.data.summary.total_cases);
+    var recoveredPath = new Intl.NumberFormat().format(response.data.summary.recovered);
+    var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
+    // create stat elements
+    var activeCases = $("<p>").text("Active cases: " + activePath);
+    var totalCases = $("<p>").text("Total cases: " + totalPath);
+    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<p>").text("Total deaths: " + deathPath);
+    
+    // add stats to DOM
+    $(".location").text(region);
+    $(".location").append(activeCases);
+    $(".location").append(totalCases);    
+    $(".location").append(totalRecovered);    
+    $(".location").append(deathToll);
+});
 
 //   create aside with worldwide covid stats
 var worldStats = {
@@ -36,30 +48,106 @@ var worldStats = {
 }
 $.ajax(worldStats).done(function (response) {
     console.log(response);
-    // world wide stats
-    var activeCases = $("<h2>").text("World wide active cases: " + response.data.summary.active_cases);
-    var totalCases = $("<h2>").text("World wide total cases: " + response.data.summary.total_cases);
-    var deathToll = $("<h2>").text("World wide total deaths: " + response.data.summary.deaths);
-    $(".location").append(activeCases)
-    $(".location").append(totalCases)    
-    $(".location").append(deathToll)
+
+    // format numbers
+    var activePath = new Intl.NumberFormat().format(response.data.summary.active_cases);
+    var totalPath = new Intl.NumberFormat().format(response.data.summary.total_cases);
+    var recoveredPath = new Intl.NumberFormat().format(response.data.summary.recovered);
+    var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
+
+    // world wide stat elements created
+    var activeCases = $("<p>").text("Active cases: " + activePath);
+    var totalCases = $("<p>").text("Total cases: " + totalPath);
+    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<p>").text("Total deaths: " + deathPath);
+    
+    // stats added to DOM
+    $(".worldwide").append(activeCases);
+    $(".worldwide").append(totalCases);  
+    $(".worldwide").append(totalRecovered);    
+    $(".worldwide").append(deathToll);
 });
 
-// Query for map
-var mapTileQuery = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://maptiles.p.rapidapi.com/local/osm/v1/3/6/3.png",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "maptiles.p.rapidapi.com",
-		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
-	}
-}
+/** NYT Article Search
+ * @returns {string} URL for NYT API
+ * @param {object} NYTData
+ */
+function buildQueryURL() {
+    // queryURL is the url we'll use to query the API
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+  
+    // Begin building an object to contain our API call's query parameters
+    // Set the API key
+    var queryParams = { "api-key": "iv2BweW9nX6XL4Afc9BhmswYFp8lNxnT" };
+  
+    // sets to search for articles associated with covid
+    queryParams.q = "covid"
+  
+    // Logging the URL so we have access to it for troubleshooting
+    console.log("---------------\nURL: " + queryURL + "\n---------------");
+    console.log(queryURL + $.param(queryParams));
+    return queryURL + $.param(queryParams);
+  }
+  
+var queryURL = buildQueryURL();
+  
+// Make the AJAX request to the API - GETs the JSON data at the queryURL.
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).done(function (response) {
+    console.log(response);
+    // append to DOM
+    for (var i = 0; i < 10; i++) {
+        var headlineEl = $("<li class='newsTitles'>").text(response.response.docs[i].headline.main)
+        var abstractEl = $("<li>").text(response.response.docs[i].abstract)
+        var bylineEl = $("<li class='newsByline'>").text(response.response.docs[i].byline.original)
+        var readLink = $("<a href='" + response.response.docs[i].web_url + "'>" + "Read Here" + "</a>")
+        $(".newsStories").append(headlineEl);
+        $(".newsStories").append(abstractEl);
+        $(".newsStories").append(bylineEl);
+        $(".newsStories").append(readLink);
+        $(".newsStories").append($("<br>"));
+        $(".newsStories").append($("<br>"));
+    }
+})
+
+
+// potential buttons
+$("worldBtn").on("click", function() {
+
+})
+$("usBtn").on("click", function() {
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+// // Query for map
+// var mapTileQuery = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://maptiles.p.rapidapi.com/local/osm/v1/3/6/3.png",
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "maptiles.p.rapidapi.com",
+// 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+// 	}
+// }
+
 // "Map data © OpenStreetMap contributors." -- required on page to give proper credit
-$.ajax(mapTileQuery).done(function (response) {
-	// console.log(response);
-});
+// $.ajax(mapTileQuery).done(function (response) {
+// 	console.log(response);
+// });
 
 // var mapQuery = {
 //     "url": "https://bing.com/maps/default.aspx?cp=37.814692~-122.477339&style=o&lvl=1&dir=0&scene=1140291",
