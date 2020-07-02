@@ -35,5 +35,9 @@ h1 {
     border-radius: 20px;
     padding: 10px;
     text-align: center;
-    background-color: rgba(39, 39, 39, 0.8);
+    background-color: rgba(192, 192, 192, 0.8);
+}
+
+.location {
+    color: rgb(39, 39, 39);
 }
