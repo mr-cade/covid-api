@@ -78,8 +78,28 @@ li {
     text-align: center;
 }
 
+#region {
+    background-color: rgba(243, 243, 243, 0.5);
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+#searchBtn {
+    background-color: rgba(243, 243, 243, 0.5);
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
 
 /*news.html*/
 
