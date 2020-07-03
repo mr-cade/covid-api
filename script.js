@@ -1,6 +1,5 @@
 // sets up covid query for later ajax pull
 $("#searchBtn").on("click", function() {
-    console.log($("#region").val())
     region = $("#region").val()
 
     var covidQuery = {
@@ -13,7 +12,7 @@ $("#searchBtn").on("click", function() {
             "x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
         }
     };
-    // pulls data from covid api and appends stats  to header
+    // pulls searched region's data from covid api and appends stats to div
     $.ajax(covidQuery).done(function (response) {
         // searched location
         console.log(response);
@@ -39,7 +38,7 @@ $("#searchBtn").on("click", function() {
     });
 })
 
-//   create aside with worldwide covid stats
+//   pull for worldwide covid stats
 var worldStats = {
 	"async": true,
 	"crossDomain": true,
@@ -103,7 +102,7 @@ function buildQueryURL() {
     var queryParams = { "api-key": "iv2BweW9nX6XL4Afc9BhmswYFp8lNxnT" };
   
     // sets to search for articles associated with covid
-    queryParams.q = "covid"
+    queryParams.q = "covid-19"
   
     // Logging the URL so we have access to it for troubleshooting
     console.log("---------------\nURL: " + queryURL + "\n---------------");
