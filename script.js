@@ -1,39 +1,43 @@
 // sets up covid query for later ajax pull
-var region = prompt("select a region").trim() //needs to be a modal not a prompt
-var covidQuery = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://coronavirus-map.p.rapidapi.com/v1/summary/region?region=" + region,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
-		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
-	}
-};
-// pulls data from covid api and appends stats  to header
-$.ajax(covidQuery).done(function (response) {
-    // searched location
-    console.log(response);
-    
-    // format numbers
-    var activePath = new Intl.NumberFormat().format(response.data.summary.active_cases);
-    var totalPath = new Intl.NumberFormat().format(response.data.summary.total_cases);
-    var recoveredPath = new Intl.NumberFormat().format(response.data.summary.recovered);
-    var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
+$("#searchBtn").on("click", function() {
+    console.log($("#region").val())
+    region = $("#region").val()
 
-    // create stat elements
-    var activeCases = $("<p>").text("Active cases: " + activePath);
-    var totalCases = $("<p>").text("Total cases: " + totalPath);
-    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
-    var deathToll = $("<p>").text("Total deaths: " + deathPath);
-    
-    // add stats to DOM
-    $(".location").text(region);
-    $(".location").append(activeCases);
-    $(".location").append(totalCases);    
-    $(".location").append(totalRecovered);    
-    $(".location").append(deathToll);
-});
+    var covidQuery = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://coronavirus-map.p.rapidapi.com/v1/summary/region?region=" + region,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
+            "x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+        }
+    };
+    // pulls data from covid api and appends stats  to header
+    $.ajax(covidQuery).done(function (response) {
+        // searched location
+        console.log(response);
+        
+        // format numbers
+        var activePath = new Intl.NumberFormat().format(response.data.summary.active_cases);
+        var totalPath = new Intl.NumberFormat().format(response.data.summary.total_cases);
+        var recoveredPath = new Intl.NumberFormat().format(response.data.summary.recovered);
+        var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
+
+        // create stat elements
+        var activeCases = $("<p>").text("Active cases: " + activePath);
+        var totalCases = $("<p>").text("Total cases: " + totalPath);
+        var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
+        var deathToll = $("<p>").text("Total deaths: " + deathPath);
+        
+        // add stats to DOM
+        $(".location").text(region);
+        $(".location").append(activeCases);
+        $(".location").append(totalCases);    
+        $(".location").append(totalRecovered);    
+        $(".location").append(deathToll);
+    });
+})
 
 //   create aside with worldwide covid stats
 var worldStats = {
@@ -79,7 +83,6 @@ var historicalData = {
     }
 }
 $.ajax(historicalData).done(function (response) {
-    console.log(response);
     objectData = response.data;
     var dataPoints = [];
     dataPoints.push(objectData);
@@ -177,7 +180,3 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-
-
-
-
