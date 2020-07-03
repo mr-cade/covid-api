@@ -68,6 +68,20 @@ $.ajax(worldStats).done(function (response) {
     $(".worldwide").append(deathToll);
 });
 
+var historicalData = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://coronavirus-map.p.rapidapi.com/v1/spots/summary",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
+        "x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+    }
+}
+$.ajax(historicalData).done(function (response) {
+	console.log(response);
+});
+
 /** NYT Article Search
  * @returns {string} URL for NYT API
  * @param {object} NYTData
@@ -120,7 +134,45 @@ $("usBtn").on("click", function() {
 
 })
 
+// chart
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Covid Trend',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 
 
 
