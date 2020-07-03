@@ -79,7 +79,12 @@ var historicalData = {
     }
 }
 $.ajax(historicalData).done(function (response) {
-	console.log(response);
+    console.log(response);
+    objectData = response.data;
+    var dataPoints = [];
+    dataPoints.push(objectData);
+    console.log(dataPoints);
+    
 });
 
 /** NYT Article Search
@@ -124,7 +129,6 @@ $.ajax({
         $(".newsStories").append($("<br>"));
     }
 })
-
 
 // potential buttons
 $("worldBtn").on("click", function() {
