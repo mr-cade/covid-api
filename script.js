@@ -181,37 +181,3 @@ var myChart = new Chart(ctx, {
 
 
 
-
-
-
-
-
-
-// // Query for map
-// var mapTileQuery = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://maptiles.p.rapidapi.com/local/osm/v1/3/6/3.png",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "maptiles.p.rapidapi.com",
-// 		"x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
-// 	}
-// }
-
-// "Map data © OpenStreetMap contributors." -- required on page to give proper credit
-// $.ajax(mapTileQuery).done(function (response) {
-// 	console.log(response);
-// });
-
-// var mapQuery = {
-//     "url": "https://bing.com/maps/default.aspx?cp=37.814692~-122.477339&style=o&lvl=1&dir=0&scene=1140291",
-//     "method": "GET"
-// }
-// $.ajax(mapQuery).done(function (response) {
-//     console.log(response)
-// })
-
-
-
-// Add news search
