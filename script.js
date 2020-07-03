@@ -68,6 +68,20 @@ $.ajax(worldStats).done(function (response) {
     $(".worldwide").append(deathToll);
 });
 
+var historicalData = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://coronavirus-map.p.rapidapi.com/v1/spots/summary",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
+        "x-rapidapi-key": "c73dfbc7ffmsh7f2ddc7cba39943p17cd81jsnd820b7f1d342"
+    }
+}
+$.ajax(historicalData).done(function (response) {
+	console.log(response);
+});
+
 /** NYT Article Search
  * @returns {string} URL for NYT API
  * @param {object} NYTData
