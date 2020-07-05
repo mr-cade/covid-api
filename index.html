@@ -44,8 +44,8 @@
 <!--Search + Worldwide Deaths-->
   <div class="container">
     <div class="row">
-        <div class="col s12 m6 z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-            <header class="worldwide" style="text-align: center; font-size: 20px;">Worldwide Stats</header>
+        <div class="col s12 m12 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+            <header class="worldwide" style="text-align: center; font-size: 25px;">Worldwide Stats</header>
         </div>
     </div>
 </div>
@@ -53,16 +53,31 @@
 <!--search!! region!!!-->
 <div class="container">
 <div class="row">
-    <div class="col s12 m6 z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-        <span class="card-title" style="color: white;">Search for your region or counrty</span>
+    <div class="col s12 m6 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+          <span class="card-title" style="color: white;">
+            <i class="fas fa-globe-americas" style="color: rgb(168, 6, 6);font-size: 18px; "></i> Search for your region or counrty
+          </span>
         <div class="input-field col s12">
             <input placeholder="" id="first_name" type="text" class="validate" style="color: white;">
-            <button type="search" class="btn btn-medium " id="searchBtn">Search</button>
+            <button type="search" class="btn btn-medium " id="searchBtn"><i class="fas fa-search"></i></button>
           </div>
     <!--Show the searched info-->
           <div class="row">
-                <header class="location" style="color: white;font-size: 20px; text-align: center;"></header>
+                <header class="location" style="color: white;font-size: 22px; text-align: center;"></header>
             </div>
+        </div>
+
+         <!--Map Links-->
+        <div class="col s12 m6" style="padding-left: 20px; margin-top: 20px;">
+          <button class="btn btn-large z-depth-3" id="globalMap">
+            <i class="fas fa-globe" style="color: rgb(168, 6, 6);font-size: 18px; "></i> View the Covid-19 Global Map
+          </button>
+          <button class="btn btn-large z-depth-3" id="usMap">
+            <i class="fas fa-flag-usa" style="color: rgb(168, 6, 6);font-size: 18px; "></i> View the Covid-19 U.S. Map
+          </button>
+          <button class="btn btn-large z-depth-3" id="trends">
+            <i class="far fa-newspaper" style="color: rgb(168, 6, 6);font-size: 18px; "></i> Critical Trends & News
+          </button>
         </div>
     </div>
 </div>
@@ -81,21 +96,7 @@
 <!-- Chart Div -->
 <canvas id="myChart" width="400" height="400"></canvas>
 
-<!--Search Regions-->
-<!-- <form id="regions">
-  <input type="text" class="form-control" id="regions" placeholder="  Search">
-  <button type="search" id="submitRegions">Search</button>
-</form> -->
   
-
-  <!--Map Links-->
-  <div class="container">
-  <button class="btn btn-large " id="world">World Map</button><br>
-  <button class="btn btn-large " id="us"> US Map</button><br>
-  <button class="btn btn-large " id="trends">Trend & News</button>
-  </div>
-
-
 
 
 <!--Footer-->
