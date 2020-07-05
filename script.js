@@ -32,7 +32,7 @@ $("#searchBtn").on("click", function() {
         // add stats to DOM
         $(".location").text(region);
         $(".location").append(activeCases);
-        $(".location").append(totalCases);    
+        $(".location").append(totalCases);
         $(".location").append(totalRecovered);    
         $(".location").append(deathToll);
     });
