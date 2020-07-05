@@ -70,7 +70,7 @@ li {
     color: rgb(39, 39, 39);
 }
 
-#world, #us , #trends {
+#globalMap, #usMap , #trends {
     background-color: rgb(117, 117, 117);
     font-family: 'Fira Sans', sans-serif;
     color: rgb(39, 39, 39);
@@ -109,7 +109,7 @@ li {
     align-items: center;
 }
 
-#symtoms, #preventation, #treatment, #learn-more {
+#symtoms, #preventation, #treatment, #learn-more,#globalMap, #usMap , #trends {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
@@ -117,7 +117,7 @@ li {
     margin-bottom: 20px;
     font-size: 12px;
 }
-#symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover,#searchBtn:hover  {
+#symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
 }
