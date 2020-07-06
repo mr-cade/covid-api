@@ -56,10 +56,10 @@ $.ajax(worldStats).done(function (response) {
     var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
     // world wide stat elements created
-    var activeCases = $("<p>").text("Active cases: " + activePath);
-    var totalCases = $("<p>").text("Total cases: " + totalPath);
-    var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
-    var deathToll = $("<p>").text("Total deaths: " + deathPath);
+    var activeCases = $("<h4>").text("Active cases: "+ activePath);
+    var totalCases = $("<h4>").text("Total cases: " + totalPath);
+    var totalRecovered = $("<h4>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<h4>").text("Total deaths: " + deathPath);
     
     // stats added to DOM
     $(".worldwide").append(activeCases);
