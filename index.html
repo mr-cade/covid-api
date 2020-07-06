@@ -17,10 +17,10 @@
 <body>
 <!--Nav Bar-->
   <div class="navbar-fixed">
-    <nav class="nav-wrapper" style="background-color: rgb(82, 3, 3); height: 80px;">
+    <nav class="nav-wrapper" style="background-color: rgb(82, 3, 3); height: 70px;">
       <div class="container">
         <a href="./index.html" class="brand-logo">
-            <img src="./assets/covidLogo.png" width="180" height="80" alt="covid-logo">
+            <img src="./assets/covidLogo.png" width="160" height="70" alt="covid-logo">
         </a>
         <a href="./index.html" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
@@ -79,7 +79,7 @@
           </span>
         <div class="input-field col s12">
             <input placeholder="Region" id="region" type="text" class="validate" style="color: white;">
-            <button type="search" class="btn btn-medium " id="searchBtn"><i class="fas fa-search"></i></button>
+            <button type="search" class="btn btn-medium " id="searchBtn" style="margin-top: 10px;"><i class="fas fa-search"></i></button>
           </div>
     <!--Show the searched info-->
           <div class="row">
@@ -104,32 +104,27 @@
 </div>
 
 <!-- News Stories -->
-<div class="container" id="world-stats">
-    <div class="row">
-      <div class="col s12 m12 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-            <header class="newsStories" style="text-align: center; font-size: 25px;">News</header>
-        </div>
-    </div>
-</div>
-
-
-<!-- Chart Div -->
-
-<div class="container" id="world-stats">
-  <div class="col s12 m12 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-      <canvas id="myChart" width="400" height="400"></canvas>
-      </div>
-</div>
-
-
 <div class="container">
-    <canvas id="myChart" width="400" height="400"></canvas>
+  <div class="row">
+      <div class="col s12 m6 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+        <header class="newsStories" style="text-align: center;">News</header>
+      </div>
+
+        <div class="col s12 m6" style="padding: 10px;">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+
+  </div>
 </div>
 
 
-<canvas id="myChart" width="400" height="400"></canvas>
-
-
+  
+<!-- Chart Div -->
+<!-- <div class="container">
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div> -->
   
 
 
