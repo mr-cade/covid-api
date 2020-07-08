@@ -14,11 +14,11 @@ body {
 }
 
 
-
 header  {
     color: white;
     font-size: 18px;
 }
+
 
 p {  
     color: white;
@@ -57,6 +57,7 @@ a {
     color: white;
     font-size: 12px;
     text-align: center;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -64,6 +65,7 @@ li {
     color: white;
     text-align: left;
     font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .navbar-fixed {
@@ -91,6 +93,10 @@ li {
     margin: auto;
     text-align: center;
 }
+
+.col.s12 a .btn {
+    width: 100%;
+ }
 
 #region {
     background-color: rgba(243, 243, 243, 0.5);
@@ -131,10 +137,11 @@ li {
     margin-bottom: 20px;
     font-size: 12px;
 }
- a:hover, #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
+ #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
 }
+
 
 #health {
     font-size: 12px;
@@ -143,6 +150,7 @@ li {
 #health:hover {
     font-size: 15px;
 }
+
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
     color: transparent;
