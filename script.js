@@ -26,8 +26,8 @@ $("#searchBtn").on("click", function() {
         // create stat elements
         var activeCases = $("<p>").text("Active cases: " + activePath);
         var totalCases = $("<p>").text("Total cases: " + totalPath);
-        var totalRecovered = $("<p>").text("Total recoveries: " + recoveredPath);
-        var deathToll = $("<p>").text("Total deaths: " + deathPath);
+        var totalRecovered = $("<p style='color: green'>").text("Total recoveries: " + recoveredPath);
+        var deathToll = $("<p style='color: red'>").text("Total deaths: " + deathPath);
         
         // add stats to DOM
         $(".location").text(region);
@@ -61,8 +61,8 @@ $.ajax(worldStats).done(function (response) {
     // world wide stat elements created
     var activeCases = $("<h4>").text("Active cases: "+ activePath);
     var totalCases = $("<h4>").text("Total cases: " + totalPath);
-    var totalRecovered = $("<h4>").text("Total recoveries: " + recoveredPath);
-    var deathToll = $("<h4>").text("Total deaths: " + deathPath);
+    var totalRecovered = $("<h4 style='color: green'>").text("Total recoveries: " + recoveredPath);
+    var deathToll = $("<h4 style='color: red'>").text("Total deaths: " + deathPath);
     
     // stats added to DOM
     $(".worldwide").append(activeCases);
@@ -132,12 +132,13 @@ $.ajax({
     }
 })
 
-// potential buttons
-$("worldBtn").on("click", function() {
-
-})
-$("usBtn").on("click", function() {
-
+// button
+$("#trends").on("click", function() {
+    if(newsBlock.style.display === "none") {
+        newsBlock.style.display = "block";
+    } else {
+        newsBlock.style.display = "none";
+    }
 })
 
 // chart
