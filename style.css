@@ -1,4 +1,11 @@
 
+body {
+    background-image: url(./assets/covid-wall.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
 
 #mapid { height: 500px; }
 
@@ -6,6 +13,20 @@
 
 
 
+
+h4 {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+
+a {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
 
 
 
@@ -19,34 +40,78 @@
    height: 500px;
 }
 
+#main, #world-stats {
+    margin: auto;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#globalMap, #usMap , #trends {
+    background-color: rgb(117, 117, 117);
+    font-family: 'Fira Sans', sans-serif;
+    color: rgb(39, 39, 39);
+    margin: auto;
+    text-align: center;
+}
+
+#region {
+    background-color: rgba(243, 243, 243, 0.5);
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#searchBtn {
+    background-color: rgba(243, 243, 243, 0.5);
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+/*news.html*/
+
+
+#symtoms, #preventation, #treatment, #learn-more,#globalMap, #usMap , #trends {
+    background-color: rgba(243, 243, 243, 0.5);
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+#symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
+    background-color: rgba(43, 43, 43, 0.8);
+    color: white;
+}
+
+.card-content {
+    background-color: rgba(12, 12, 12, 0.904);
+}
 
 
 
+/*Map*/
 
+#mapid { height: 500px; }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*#chartdiv{
+ 
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   padding: 300px;
+   height: 500px;
+}

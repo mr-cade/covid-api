@@ -35,10 +35,10 @@
   
    <!--Nav Bar-->
   <div class="navbar-fixed">
-    <nav class="nav-wrapper" style="background-color: rgb(82, 3, 3); height: 80px;">
+    <nav class="nav-wrapper" style="background-color: rgb(82, 3, 3); height: 70px;">
       <div class="container">
         <a href="./index.html" class="brand-logo">
-            <img src="./assets/covidLogo.png" width="180" height="80" alt="covid-logo">
+            <img src="./assets/covidLogo.png" width="160" height="70" alt="covid-logo">
         </a>
         <a href="./index.html" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
@@ -46,7 +46,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./map.html">Map</a></li>
-          <li><a href="./news.html">Trends & Information</a></li>
+          <li><a href="./news.html">Covid-19 Information</a></li>
         </ul>
       </div>
     </nav>
@@ -55,64 +55,127 @@
   <ul class="sidenav" id="mobile-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="map.html">Map</a></li>
-    <li><a href="news.html">Trends & Information</a></li>
+    <li><a href="news.html">Covid-19 Information</a></li>
   </ul>
   
-<!--Search + Worldwide Deaths-->
-<div class="container" id="main">
-    <div class="card-stacked">
-        <div class="card-content">
-            <header class="location"></header>
-        </div>
-    </div>
-</div>
-<br>
-<div class="container" id="world-stats">
-    <div class="card-stacked">
-        <div class="card-content">
-            <header class="worldwide">Worldwide Stats</header>
-        </div>
-    </div>
-</div>
-<br>
-<!-- News Stories -->
-<div class="container" id="world-stats">
-    <div class="card-stacked">
-        <div class="card-content">
-            <header class="newsStories">News</header>
-        </div>
-    </div>
-</div>
-
 <!--Search Regions-->
-<!-- <form id="regions">
-  <input type="text" class="form-control" id="regions" placeholder="  Search">
-  <button type="search" id="submitRegions">Search</button>
-</form> -->
-
-
-
-  <!-- world wild cases-->
-  <!-- <div class="col s12">
-    <div class="card-stacked">
-      <div class="card-content">
-        <header></header>
-      </div>
+<!-- <div class="container">
+  <div class="row">
+    <h3 class="text-center ">Search for your region : </h3>
+  </div>
+  <div class="row form-group from-inline" id="rowdiv">
+    <div class="input-field col s6">
+      <input id="region" type="text" class="validate" placeholder="Region">
+      <label style="color: black;"></label>
+    </div>
+      <button type="search" class="btn btn-small z-depth-3 " id="searchBtn"><i class="fas fa-search-location"></i>Search</button>
     </div>
 </div> -->
 
 
-  <!--Map Links-->
+<!-- Search + Worldwide Deaths
+<div class="container" id="main">
+    <div class="card-stacked">
+        <div class="card-content z-depth-4" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+            <header class="location white-text">Searched Location Data</header>
+======= -->
+<!--Search + Worldwide Deaths-->
   <div class="container">
-   
-  <button class="btn btn-large " id="world">World Map</button><br>
-  <button class="btn btn-large " id="us"> US Map</button><br>
-  <button class="btn btn-large " id="trends"> Critical Trends</button>
-  <div id="mapid"></div>
+    <div class="row">
+        <div class="col s12 m12 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+            <header class="worldwide" style="text-align: center; font-size: 25px;">Worldwide Stats</header>
+        </div>
+    </div>
+</div>
+
+<!--search!! region!!!-->
+<div class="container">
+<div class="row">
+    <div class="col s12 m6 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+          <span class="card-title" style="color: white;">
+            <i class="fas fa-globe-americas" style="color: rgb(168, 6, 6);font-size: 18px; "></i> Search for your region or counrty
+          </span>
+        <div class="input-field col s12">
+            <input placeholder="Region" id="region" type="text" class="validate" style="color: white;">
+            <button type="search" class="btn btn-medium " id="searchBtn" style="margin-top: 10px;"><i class="fas fa-search"></i></button>
+          </div>
+    <!--Show the searched info-->
+          <div class="row">
+                <header class="location" style="color: white;font-size: 22px; text-align: center;"></header>
+            </div>
+        </div>
+
+         <!--Map Links-->
+        <div class="col s12 m6" style="padding-left: 20px; margin-top: 20px;">
+          <button class="btn btn-large z-depth-3" id="globalMap">
+            <i class="fas fa-globe" style="color: rgb(168, 6, 6);font-size: 18px; "></i> View the Covid-19 Global Map
+          </button>
+          <button class="btn btn-large z-depth-3" id="usMap">
+            <i class="fas fa-flag-usa" style="color: rgb(168, 6, 6);font-size: 18px; "></i> View the Covid-19 U.S. Map
+          </button>
+          <button class="btn btn-large z-depth-3" id="trends">
+            <i class="far fa-newspaper" style="color: rgb(168, 6, 6);font-size: 18px; "></i> Critical Trends & News
+          </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- News Stories -->
+<div class="container">
+  <div class="row">
+      <div class="col s12 m6 z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+        <header class="newsStories" style="text-align: center;">News</header>
+      </div>
+
+        <div class="col s12 m6" style="padding: 10px;">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
   </div>
+
+
+  </div>
+</div>
+
+
   
+<!-- Chart Div -->
+<!-- <div class="container">
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div> -->
+  
+
+
+<!--Footer-->
+<footer>
+  <footer class="page-footer" style="background-color: rgba(12, 12, 12, 0.904); margin-top: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Covid-19 Tracking : </h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Recorses</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">www.cdc.gov</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Copyright Covid-19 Tracking : Cade Petersen, Rajesh Baduwal and Atima Bennett
+      </div>
+    </div>
+  </footer>
+</footer>
+
+
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="script.js"></script>
     
