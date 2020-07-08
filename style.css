@@ -41,8 +41,17 @@ h3 {
     font-family: 'Fira Sans', sans-serif;
 }
 
+
+h4 {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+
 a {
-    color: black;
+    color: white;
     font-size: 12px;
     text-align: center;
 }
@@ -124,4 +133,19 @@ li {
 
 .card-content {
     background-color: rgba(12, 12, 12, 0.904);
+}
+
+
+
+/*Map*/
+
+#mapid { height: 500px; }
+
+/*#chartdiv{
+ 
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   padding: 300px;
+   height: 500px;
 }
