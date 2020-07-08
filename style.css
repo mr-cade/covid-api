@@ -79,9 +79,7 @@ li {
     text-align: center;
 }
 
-.col.s12 a .btn {
-    width: 100%;
- }
+
 
 #region {
     background-color: rgba(243, 243, 243, 0.5);
@@ -90,10 +88,22 @@ li {
     text-align: center;
 }
 
-.input-field {
+
+
+
+/*news.html*/
+
+
+.col.s12  .btn {
+    width: 100%;
+ }
+
+
+ .input-field {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100px;
 }
 
 
@@ -104,16 +114,15 @@ li {
     margin-left: 15px;
     margin-bottom: 20px;
     font-size: 12px;
+    width: 20%;
 }
-
-/*news.html*/
 
 
  #learn-more,#globalMap, #usMap , #trends {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     margin-bottom: 20px;
     font-size: 12px;
 }
