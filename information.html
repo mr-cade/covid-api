@@ -28,7 +28,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./map.html">Map</a></li>
-          <li><a href="./news.html">Covid-19 Information</a></li>
+          <li><a href="./information.html">Covid-19 Information</a></li>
         </ul>
       </div>
     </nav>
@@ -37,24 +37,10 @@
   <ul class="sidenav" id="mobile-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="map.html">Map</a></li>
-    <li><a href="news.html">Covid-19 Information</a></li>
+    <li><a href="information.html">Covid-19 Information</a></li>
   </ul>
   
 
-<!--Informations Btn-->
-<div class="container">
-    <div class="col s-12 m-6)" id="infoBtn">
-      <button class="btn btn-medium z-depth-3" id="symtoms">
-        <a href="#symtomsInfo"><i class="fas fa-head-side-cough" style="color: rgb(82, 3, 3);"></i> Symtoms</a>
-      </button>
-      <button class="btn btn-medium z-depth-3" id="preventation">
-        <a href="#preventionInfo"><i class="fas fa-head-side-mask" style="color: rgb(82, 3, 3);"></i> Prevention</a>
-      </button>
-      <button class="btn btn-medium z-depth-3" id="treatment">
-        <a href="#treatmentInfo"><i class="fas fa-prescription-bottle-alt" style="color: rgb(82, 3, 3);"></i> Treatment</a>
-      </button>
-    </div>
-</div>
 
 
 <!--Facts about covid-19!-->
@@ -93,78 +79,86 @@
 </div>
 
 
-<!-- Health Information-->
-<div class="container" id="HealthInfo" style="margin-top: 30px;">
-  <div class="card-stacked">
-      <div class="card-content z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-       <!--symptoms-->
-        <h2 style="font-size: 22px; text-align: center;"><i class="fas fa-exclamation-triangle" style="color: rgb(168, 6, 6);"></i> Health Information</h2>
-        <h3 style="text-align: left;" id="symtomsInfo"><i class="fas fa-head-side-cough" style="font-size: 40px;"></i> Symptoms</h3>
-        <p style="font-size: 16px; color: white;">Symptoms may appear 2-14 days after exposure to the virus. People with these symptoms may have COVID-19:</p><br>
-          <li>Fever or chills</li>
-          <li>Cough</li>
-          <li>Shortness of breath or difficulty breathing</li>
-          <li>Fatigue</li>
-          <li>Muscle or body aches</li>
-          <li>Headache</li>
-          <li>New loss of taste or smell</li>
-          <li>Congestion or runny nose</li>
-          <li>Nausea or vomiting</li>
-          <li>Diarrhea</li>
-              <br><br>
-        <p style="font-size: 16px; color: white;">Look for emergency warning signs for COVID-19. If someone is showing any of these signs, seek emergency medical care immediately:</p>
-          <li>Trouble breathing</li>
-          <li>Persistent pain or pressure in the chest</li>
-          <li>New confusion</li>
-          <li>Inability to wake or stay awake</li>
-          <li>Bluish lips or face</li>
-              <br><br>
-        <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" style="font-size: 14px;">Learn more on cdc.gov</a></button>
-      </div>
-  </div>
-</div>
 
-<!--Prevention-->
-<div class="container" id="HealthInfo" style="margin-top: 30px;">
-  <div class="card-stacked">
-      <div class="card-content z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-        <h3 style="text-align: left;" id="preventionInfo"><i class="fas fa-head-side-mask" style="font-size: 40px;"></i> Prevention</h3>
-        <p style="font-size: 16px; color: white;">The best way to prevent illness is to avoid being exposed to this virus. 
-          Learn how COVID-19 spreads and practice these actions to help prevent the spread of this illness.</p><br>
-          <p style="font-size: 16px; color: white;">To help prevent the spread of COVID-19, everyone should: </p><br>
-          <li>Clean your hands often, either with soap and water for 20 seconds or a hand sanitizer that contains at least 60% alcohol.</li>
-          <li>Avoid close contact with people who are sick.</li>
-          <li>Put distance between yourself and other people (at least 6 feet).</li>
-          <li>Cover your mouth and nose with a cloth face cover when around others.</li>
-          <li>Cover your cough or sneeze with a tissue, then throw the tissue in the trash.</li>
-          <li>Clean and disinfect frequently touched objects and surfaces daily.</li>
-              <br><br>
-        <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html" style="font-size: 14px;">Learn more on cdc.gov</a></button>
-      </div>
-  </div>
+<!--Health Informations TABS Style-->
+<div class="container">
+<div class="col s12" style="text-align: center;">
+    <h2 style="font-size: 24px; text-align: center; "><i class="fas fa-exclamation-triangle" style="color: rgb(168, 6, 6);"></i> Health Information</h2>
+    <ul class="tabs" style="text-align: center; background-color: rgba(12, 12, 12, 0.904)";>
+        <li class="tab col s12">
+            <a href="#symtoms" id="health" style="color: white;"><i class="fas fa-head-side-cough" style="color: rgb(168, 6, 6)"></i> Symtoms</a>
+        </li>
+        <li class="tab col s12">
+            <a href="#prevention" id="health" style="color: white;"><i class="fas fa-head-side-mask" style="color: rgb(168, 6, 6)"></i> Prevention</a>
+        </li>
+        <li class="tab col s12">
+            <a href="#treatment" id="health" style="color: white;"><i class="fas fa-prescription-bottle-alt" style="color: rgb(168, 6, 6)"></i> Treatment</a>
+        </li>
+    </ul>
+    <!--Symtoms Info-->
+<div class="col s12" id="symtoms" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+    <p class="flow-text"><i class="fas fa-head-side-cough"></i> Symtoms</p>
+    <p style="font-size: 16px; color: white; text-align: left;">Symptoms may appear 2-14 days after exposure to the virus. People with these symptoms may have COVID-19:</p><br>
+    <li>Fever or chills</li>
+    <li>Cough</li>
+    <li>Shortness of breath or difficulty breathing</li>
+    <li>Fatigue</li>
+    <li>Muscle or body aches</li>
+    <li>Headache</li>
+    <li>New loss of taste or smell</li>
+    <li>Congestion or runny nose</li>
+    <li>Nausea or vomiting</li>
+    <li>Diarrhea</li>
+        <br><br>
+  <p style="font-size: 16px; color: white; text-align: left;">Look for emergency warning signs for COVID-19. If someone is showing any of these signs, seek emergency medical care immediately:</p><br>
+    <li>Trouble breathing</li>
+    <li>Persistent pain or pressure in the chest</li>
+    <li>New confusion</li>
+    <li>Inability to wake or stay awake</li>
+    <li>Bluish lips or face</li>
+        <br><br>
+  <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" style="font-size: 14px;">Learn more about symtoms</a></button>
 </div>
-  
-<!--Treatment-->
-<div class="container" id="HealthInfo" style="margin-top: 30px;">
-  <div class="card-stacked">
-      <div class="card-content z-depth-3" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
-        <h3 style="text-align: left;" id="treatmentInfo"><i class="fas fa-prescription-bottle-alt" style="font-size: 40px;"></i> Treatment</h3>
-        <p style="font-size: 16px; color: white;">People with COVID-19 should receive supportive care to help relieve symptoms. There is no specific antiviral treatment recommended for COVID-19.</p><br><br>
-          <p style="font-size: 16px; color: white;">Self care </p><br>
+<!--Prevention Info-->
+<div class="col s12" id="prevention" style="padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+    <p class="flow-text"><i class="fas fa-head-side-mask"></i> Prevention</p>
+    <p style="font-size: 16px; color: white; text-align: left;">The best way to prevent illness is to avoid being exposed to this virus. 
+        Learn how COVID-19 spreads and practice these actions to help prevent the spread of this illness.</p><br>
+    <p style="font-size: 16px; color: white; text-align: left;">To help prevent the spread of COVID-19, everyone should: </p><br>
+        <li>Clean your hands often, either with soap and water for 20 seconds or a hand sanitizer that contains at least 60% alcohol.</li>
+        <li>Avoid close contact with people who are sick.</li>
+        <li>Put distance between yourself and other people (at least 6 feet).</li>
+        <li>Cover your mouth and nose with a cloth face cover when around others.</li>
+        <li>Cover your cough or sneeze with a tissue, then throw the tissue in the trash.</li>
+        <li>Clean and disinfect frequently touched objects and surfaces daily.</li>
+            <br><br>
+      <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html" style="font-size: 14px;">Learn more about prevention</a></button>
+</div>
+<!--Treatment Info-->
+<div class="col s12" id="treatment" style= "padding: 20px; background-color: rgba(12, 12, 12, 0.904);">
+    <p class="flow-text"><i class="fas fa-prescription-bottle-alt"></i> Treatment</p>
+    <p style="font-size: 16px; color: white; text-align: left;">People with COVID-19 should receive supportive care to help relieve symptoms. There is no specific antiviral treatment recommended for COVID-19.</p><br><br>
+        <p style="font-size: 16px; color: white; text-align: left;">Self care </p><br>
           <li>Stay home except to get medical care.</li>
           <li>Monitor your symptoms carefully. If your symptoms get worse, call your healthcare provider immediately.</li>
           <li>Get rest and stay hydrated. Take over-the-counter medicines, such as acetaminophen, to help you feel better.</li>
           <li>If you have a medical appointment, notify your healthcare provider ahead of time that you have or may have COVID-19.</li>
           <li>Stay in a specific room and away from other people in your home. If possible, use a separate bathroom. If you must be around others, wear a facemask.</li>
         <br><br>
-        <p style="font-size: 16px; color: white;">Medical treatments </p><br>
+        <p style="font-size: 16px; color: white; text-align: left;">Medical treatments </p><br>
           <li>Stay in touch with your doctor. Call before you get medical care.</li>
           <li>Your local health authorities may give instructions on checking your symptoms and reporting information.</li>
         <br><br>
-          <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" style="font-size: 14px;">Learn more on cdc.gov</a></button>
-      </div>
-  </div>
+          <button class="btn btn-small z-depth-3 " id="learn-more"><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" style="font-size: 14px;">Learn more about treatment</a></button>
 </div>
+
+</div>
+</div>
+
+
+
+
+
 
     
  <!--Footer-->
@@ -186,13 +180,12 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
+      <div class="container center-align">
       © 2020 Copyright Covid-19 Tracking : Cade Petersen, Rajesh Baduwal and Atima Bennett
       </div>
     </div>
   </footer>
 </footer>
-
 
 
 
@@ -207,6 +200,7 @@
   <script>
     $(document).ready(function(){
       $('.sidenav').sidenav();
+      $('.tabs').tabs();
     });
   </script>
 </body>
