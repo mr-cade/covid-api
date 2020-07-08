@@ -38,21 +38,25 @@ $("#searchBtn").on("click", function() {
         $(".location").append(totalRecovered);    
         $(".location").append(deathToll);
     });
+    $("#region").val("")
+    $(".reset").attr({
+        "Placeholder": "Region"
+    })
 });
 
-// // refresh with last location populated
-// // save to local storage
-// function saveSearch () {
-//     // creates object and saves to local storage
-//     var regionName = $("#region").val()
-//     console.log(regionName);
-//     var regionSearch = {
-//         region : regionName
-//       }
-//       localArr.push(regionSearch)
-//       localStorage.setItem("regionSearch", JSON.stringify(localArr))
-// }
-// saveSearch()
+// refresh with last location populated
+// save to local storage
+function saveSearch () {
+    // creates object and saves to local storage
+    var regionName = $("#region").val()
+    console.log(regionName);
+    var regionSearch = {
+        region : regionName
+      }
+      localArr.push(regionSearch)
+      localStorage.setItem("regionSearch", JSON.stringify(localArr))
+}
+saveSearch();
 
 //   pull for worldwide covid stats
 var worldStats = {
