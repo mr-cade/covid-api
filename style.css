@@ -3,11 +3,26 @@ body {
     background-image: url(./assets/covid-wall.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     margin: 0;
     font-family: 'Fira Sans', sans-serif;
 }
 
 #mapid { height: 500px; }
+
+=======
+
+header  {
+    color: white;
+    font-size: 18px;
+}
+
+
+p {  
+    color: white;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+}
 
 
 
@@ -26,9 +41,17 @@ a {
     color: white;
     font-size: 12px;
     text-align: center;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
+
+li {
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+}
 
 
 /*#chartdiv{
@@ -58,6 +81,10 @@ a {
     text-align: center;
 }
 
+.col.s12 a .btn {
+    width: 100%;
+ }
+
 #region {
     background-color: rgba(243, 243, 243, 0.5);
     font-family: 'Fira Sans', sans-serif;
@@ -84,7 +111,7 @@ a {
 /*news.html*/
 
 
-#symtoms, #preventation, #treatment, #learn-more,#globalMap, #usMap , #trends {
+ #learn-more,#globalMap, #usMap , #trends {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
@@ -92,9 +119,29 @@ a {
     margin-bottom: 20px;
     font-size: 12px;
 }
-#symtoms:hover, #preventation:hover, #treatment:hover, a:hover, #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
+ #learn-more:hover,#searchBtn:hover,#globalMap:hover, #usMap:hover , #trends:hover {
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
+}
+
+
+#health {
+    font-size: 12px;
+}
+
+#health:hover {
+    font-size: 15px;
+}
+
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    color: transparent;
+    background-color: transparent;
+}
+  
+
+.tabs .indicator {
+    background-color: rgb(168, 6, 6);
 }
 
 .card-content {
