@@ -1,3 +1,7 @@
+var localArr = []
+var activeCases = [];
+var deaths = [];
+var recoveries = [];
 // sets up covid query for later ajax pull
 $("#searchBtn").on("click", function() {
     region = $("#region").val()
@@ -36,7 +40,25 @@ $("#searchBtn").on("click", function() {
         $(".location").append(totalRecovered);    
         $(".location").append(deathToll);
     });
-})
+    $("#region").val("")
+    $(".reset").attr({
+        "Placeholder": "Region"
+    })
+});
+
+// // refresh with last location populated
+// // save to local storage
+// function saveSearch () {
+//     // creates object and saves to local storage
+//     var regionName = $("#region").textContent
+//     console.log(regionName);
+//     var regionSearch = {
+//         region : regionName
+//       }
+//       localArr.push(regionSearch)
+//       localStorage.setItem("regionSearch", JSON.stringify(localArr))
+// }
+// saveSearch();
 
 //   pull for worldwide covid stats
 var worldStats = {
@@ -82,11 +104,50 @@ var historicalData = {
     }
 }
 $.ajax(historicalData).done(function (response) {
-    objectData = response.data;
-    var dataPoints = [];
-    dataPoints.push(objectData);
-    console.log(dataPoints);
-    
+    objectData = response.data["2020-01-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-02-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-03-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-04-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-05-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-06-22"].active_cases;
+    activeCases.push(objectData);
+    objectData = response.data["2020-07-08"].active_cases;
+    activeCases.push(objectData);
+    console.log(activeCases);
+    objectData = response.data["2020-01-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-02-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-03-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-04-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-05-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-06-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-07-08"].deaths;
+    deaths.push(objectData);
+    console.log(deaths);
+    objectData = response.data["2020-01-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-02-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-03-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-04-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-05-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-06-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-07-08"].recovered;
+    recoveries.push(objectData);
 });
 
 /** NYT Article Search
@@ -132,7 +193,7 @@ $.ajax({
     }
 })
 
-// button
+// News/chart toggle on click 
 $("#trends").on("click", function() {
     if(newsBlock.style.display === "none") {
         newsBlock.style.display = "block";
@@ -145,29 +206,64 @@ $("#trends").on("click", function() {
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
-            label: 'Covid Trend',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Worldwide Active Covid Cases',
+            data: activeCases,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.5)'
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+            
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var ctx = document.getElementById('deathChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        datasets: [{
+            label: 'Worldwide Covid Deaths',
+            data: deaths,
+            backgroundColor: [
+                'red'
             ],
-            borderWidth: 1
+            
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var ctx = document.getElementById('recoveryChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        datasets: [{
+            label: 'Worldwide Covid Recoveries',
+            data: recoveries,
+            backgroundColor: [
+                'green'
+            ],
+            
         }]
     },
     options: {
