@@ -1,5 +1,7 @@
 var localArr = []
-var dataPoints = [];
+var activeCases = [];
+var deaths = [];
+var recoveries = [];
 // sets up covid query for later ajax pull
 $("#searchBtn").on("click", function() {
     region = $("#region").val()
@@ -103,20 +105,49 @@ var historicalData = {
 }
 $.ajax(historicalData).done(function (response) {
     objectData = response.data["2020-01-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-02-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-03-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-04-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-05-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-06-22"].active_cases;
-    dataPoints.push(objectData);
+    activeCases.push(objectData);
     objectData = response.data["2020-07-08"].active_cases;
-    dataPoints.push(objectData);
-    console.log(dataPoints);
+    activeCases.push(objectData);
+    console.log(activeCases);
+    objectData = response.data["2020-01-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-02-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-03-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-04-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-05-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-06-22"].deaths;
+    deaths.push(objectData);
+    objectData = response.data["2020-07-08"].deaths;
+    deaths.push(objectData);
+    console.log(deaths);
+    objectData = response.data["2020-01-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-02-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-03-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-04-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-05-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-06-22"].recovered;
+    recoveries.push(objectData);
+    objectData = response.data["2020-07-08"].recovered;
+    recoveries.push(objectData);
 });
 
 /** NYT Article Search
@@ -180,9 +211,57 @@ var myChart = new Chart(ctx, {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
             label: 'Worldwide Active Covid Cases',
-            data: dataPoints,
+            data: activeCases,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.5)'
+            ],
+            
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var ctx = document.getElementById('deathChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        datasets: [{
+            label: 'Worldwide Covid Deaths',
+            data: deaths,
+            backgroundColor: [
+                'red'
+            ],
+            
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+var ctx = document.getElementById('recoveryChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        datasets: [{
+            label: 'Worldwide Covid Recoveries',
+            data: recoveries,
+            backgroundColor: [
+                'green'
             ],
             
         }]
