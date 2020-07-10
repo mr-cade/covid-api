@@ -52,12 +52,15 @@ $("#searchBtn").on("click", function() {
           localStorage.setItem("regionSearch", JSON.stringify(localArr))
     }
     saveSearch();
+
+    // resets search box and replaces placeholder
     $("#region").val("")
     $(".reset").attr({
         "Placeholder": "Region"
     })
 });
 
+// This function pulls information for the last searched country upon page refresh
 function refreshPopulate () {
     var fromLocalStorage = JSON.parse(localStorage.getItem("regionSearch"))
     if (fromLocalStorage != null) {
@@ -98,6 +101,7 @@ $.ajax(worldStats).done(function (response) {
     $(".worldwide").append(deathToll);
 });
 
+// pull for historical data and pushes to the arrays used in charts
 var historicalData = {
     "async": true,
     "crossDomain": true,
@@ -177,8 +181,7 @@ function buildQueryURL() {
   }
   
 var queryURL = buildQueryURL();
-  
-// Make the AJAX request to the API - GETs the JSON data at the queryURL.
+// pulls 10 NYT articles related to covid
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -207,8 +210,9 @@ $("#trends").on("click", function() {
     }
 })
 
-// chart
+// charts
 
+// overlapped
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -248,6 +252,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// active cases chart
 var ctx = document.getElementById('activeCasesChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -272,6 +277,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// death chart
 var ctx = document.getElementById('deathChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -296,6 +302,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// recovery chart
 var ctx = document.getElementById('recoveryChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
