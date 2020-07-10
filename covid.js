@@ -11,27 +11,20 @@ L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=wnclmoF7O9y
 
 }).addTo(mymap);
 
-
-
-//console.log(usadata);
-
-
-
-
-
+//Ajax call to get the covid data.
 $.ajax({
     url: "https://covidtracking.com/api/v1/states/current.json",
     method: "GET"
   })
   .then(function(response) {
     console.log(response);
-   // console.log(response[0].positive);
+  
 
 
  states={'Arizona':response[4].positive,'Alabama':response[1].positive,'Alaska':response[0].positive,'Arkansas':response[3].positive, 'California':response[5].positive,
         'Colorado':response[6].positive,'Connecticut':response[7].positive,'Delaware':response[9].positive,  'Florida':response[10].positive , 'Georgia':response[11].positive,  'Hawaii' :response[13].positive,
         'Idaho':response[15].positive,  'Illinois':response[16].positive,'Indiana' :response[17].positive,  'Iowa':response[14].positive, 'Kansas' :response[18].positive,
-        'Kentucky':response[19].positive, 'Louisiana':response[20].positive,    'Maine':response[23].positive,    'Maryland':response[22].positive,  'Massachusetts':response[21].positive, 'Michigan':response[24].positive, 
+        'Kentucky':response[19].positive, 'Louisiana':response[20].positive,    'Maine':response[23].positive,'Maryland':response[22].positive,  'Massachusetts':response[21].positive, 'Michigan':response[24].positive, 
         'Minnesota':response[25].positive,  'Mississippi':response[28].positive,  'Missouri':response[26].positive, 'Montana':response[29].positive,
         'Nebraska':response[32].positive, 'Nevada':response[36].positive,'New Hampshire':response[33].positive, 'New Mexico':response[35].positive, 'New York':response[37].positive,
         'North Carolina':response[30].positive,'North Dakota':response[31].positive,'Ohio':response[38].positive,'Oklahoma':response[39].positive,'Oregon':response[40].positive,
@@ -90,22 +83,13 @@ $.ajax({
    
    
  }
- //console.log(usstates[0].name);
- //console.log(usstates[1].cases);
  console.log(usstates[0]);
- console.log(usstates[1]);
- console.log(usstates[2]);
- console.log(usstates[3]);
- console.log(usstates[4]);
- console.log(usstates[5]);
-
+ 
   });
  var states;
 
 
   function getColor(d) { 
-    
-    // a function or a code that takes name of the state and comes up with value. instead of d use any function like state
     return d > 100000 ? '#800026' :
            d > 50000  ? '#BD0026' :
            d > 20000 ? '#E31A1C' :
@@ -116,40 +100,12 @@ $.ajax({
                       '#FFEDA0';
 }
 
-// function getColor(name) { 
-  // a function or a code that takes name of the state and comes up with value. instead of d use any function like state
-//     return name > 1000 ? '#800026' :
-//            name > 500  ? '#BD0026' :
-//            name > 200  ? '#E31A1C' :
-//            name > 100  ? '#FC4E2A' :
-//            name > 50   ? '#FD8D3C' :
-//            name > 20   ? '#FEB24C' :
-//            name > 10   ? '#FED976' :
-//                       '#FFEDA0';
-
-
-
-// function style(cases) {
-//     return {
-//         fillColor: getColor(usstates.name.cases), // get the actual raw data.the function will be feature.properties.name
-//         weight: 2,
-//         opacity: 1,
-//         color: 'white',
-//         dashArray: '3',
-//         fillOpacity: 0.7
-//     };
-// }
-
-// L.geoJson(usadata, {style: style}).addTo(mymap);
-
-
-
 
 
 
 function style(feature) {
     return {
-        fillColor: getColor(states[feature.properties.name]), // get the actual raw data.the function will be feature.properties.name
+        fillColor: getColor(states[feature.properties.name]), 
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -157,10 +113,6 @@ function style(feature) {
         fillOpacity: 0.7
     };
 }
-
-
-
-
 
 
 function highlightFeature(e) {
@@ -197,12 +149,6 @@ function onEachFeature(feature, layer) {
 }
 
 
-
-
-
-
-
-
   var info = L.control();
 
   info.onAdd = function (map) {
@@ -214,12 +160,16 @@ function onEachFeature(feature, layer) {
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
       this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
-          '<b>'  + '</b><br />' + states[props.name] + ' cases'
+          '<b>' +props.name + '</b><br />' + states[props.name] + ' cases'
           : 'Hover over a state');
   };
   
   info.addTo(mymap);
   
+
+
+
+
 
 
 
