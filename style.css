@@ -54,47 +54,7 @@ li {
 }
 
 
-/*#chartdiv{
- 
-   margin-left: auto;
-   margin-right: auto;
-   display: block;
-   padding: 300px;
-   height: 500px;
-}
-
-#main, #world-stats {
-    margin: auto;
-    width: 500px;
-    max-width: 100%;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: center;
-}
-
-
-#globalMap, #usMap , #trends {
-    background-color: rgb(117, 117, 117);
-    font-family: 'Fira Sans', sans-serif;
-    color: rgb(39, 39, 39);
-    margin: auto;
-    text-align: center;
-}
-
-
-
-#region {
-    background-color: rgba(243, 243, 243, 0.5);
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 12px;
-    text-align: center;
-}
-
-
-
-
 /*news.html*/
-
 
 .col.s12  .btn {
     width: 100%;
@@ -124,7 +84,6 @@ li {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    /* margin-left: 15px; */
     margin-bottom: 20px;
     font-size: 12px;
     width: 90%;
