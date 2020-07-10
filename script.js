@@ -213,16 +213,16 @@ var myChart = new Chart(ctx, {
             label: 'Worldwide Active Covid Cases',
             data: activeCases,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.5)'
+                'yellow'
             ],
-            
         }]
     },
     options: {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 5000000
                 }
             }]
         }
@@ -239,14 +239,14 @@ var myChart = new Chart(ctx, {
             backgroundColor: [
                 'red'
             ],
-            
         }]
     },
     options: {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 5000000
                 }
             }]
         }
@@ -270,7 +270,8 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 5000000
                 }
             }]
         }
