@@ -29,7 +29,7 @@ $("#searchBtn").on("click", function() {
 
         // create stat elements
         var activeCases = $("<p>").text("Active cases: " + activePath);
-        var totalCases = $("<p>").text("Total cases: " + totalPath);
+        var totalCases = $("<p style='color: yellow'>").text("Total cases: " + totalPath);
         var totalRecovered = $("<p style='color: green'>").text("Total recoveries: " + recoveredPath);
         var deathToll = $("<p style='color: red'>").text("Total deaths: " + deathPath);
         
@@ -58,6 +58,13 @@ $("#searchBtn").on("click", function() {
     })
 });
 
+function refreshPopulate () {
+    var fromLocalStorage = JSON.parse(localStorage.getItem("regionSearch"))
+    if (fromLocalStorage != null) {
+      console.log(fromLocalStorage[0].region)}
+    }
+refreshPopulate()
+
 //   pull for worldwide covid stats
 var worldStats = {
 	"async": true,
@@ -79,14 +86,14 @@ $.ajax(worldStats).done(function (response) {
     var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
     // world wide stat elements created
-    var activeCases = $("<h4>").text("Active cases: "+ activePath);
+    var activeCases = $("<h4 style='color: yellow'>").text("Active cases: "+ activePath);
     var totalCases = $("<h4>").text("Total cases: " + totalPath);
     var totalRecovered = $("<h4 style='color: green'>").text("Total recoveries: " + recoveredPath);
     var deathToll = $("<h4 style='color: red'>").text("Total deaths: " + deathPath);
     
     // stats added to DOM
     $(".worldwide").append(activeCases);
-    $(".worldwide").append(totalCases);  
+    $(".worldwide").append(totalCases);
     $(".worldwide").append(totalRecovered);    
     $(".worldwide").append(deathToll);
 });
