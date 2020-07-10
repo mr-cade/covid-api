@@ -14,9 +14,9 @@ able to see the statistics displayed on the map for the United States.
  
  
  ## Division of Labor.
- Chief Designer: Atima Benett.
- Charts, news, and stats via API's: Cade Petersen.
- Map and the API: Rajesh Baduwal.
+ Chief Designer: Atima Benett.\
+ Charts, news, and stats via API's: Cade Petersen.\
+ Interactive Map and stats: Rajesh Baduwal.\
  
  
  
