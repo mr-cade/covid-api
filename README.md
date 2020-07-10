@@ -20,6 +20,7 @@ able to see the statistics displayed on the map for the United States.
  
  
  
+
 Resources:
 https://leafletjs.com 
 https://covidtracking.com/ 
