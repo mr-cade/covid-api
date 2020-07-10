@@ -10,29 +10,146 @@ L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=wnclmoF7O9y
 
 
 }).addTo(mymap);
-var geoJson=L.geoJson(usadata).addTo(mymap); // dont call line 13 until the data is ready.
-
-var cali= [270,000];
 
 
 
-function getColor(d) { 
-    // a function that takes name of the state and comes up with value. instead of d use any function like state
-    return d > 1000 ? '#800026' :
-           d > 500  ? '#BD0026' :
-           d > 200  ? '#E31A1C' :
-           d > 100  ? '#FC4E2A' :
-           d > 50   ? '#FD8D3C' :
-           d > 20   ? '#FEB24C' :
-           d > 10   ? '#FED976' :
+//console.log(usadata);
+
+
+
+
+
+$.ajax({
+    url: "https://covidtracking.com/api/v1/states/current.json",
+    method: "GET"
+  })
+  .then(function(response) {
+    console.log(response);
+   // console.log(response[0].positive);
+
+
+ states={'Arizona':response[4].positive,'Alabama':response[1].positive,'Alaska':response[0].positive,'Arkansas':response[3].positive, 'California':response[5].positive,
+        'Colorado':response[6].positive,'Connecticut':response[7].positive,'Delaware':response[9].positive,  'Florida':response[10].positive , 'Georgia':response[11].positive,  'Hawaii' :response[13].positive,
+        'Idaho':response[15].positive,  'Illinois':response[16].positive,'Indiana' :response[17].positive,  'Iowa':response[14].positive, 'Kansas' :response[18].positive,
+        'Kentucky':response[19].positive, 'Louisiana':response[20].positive,    'Maine':response[23].positive,    'Maryland':response[22].positive,  'Massachusetts':response[21].positive, 'Michigan':response[24].positive, 
+        'Minnesota':response[25].positive,  'Mississippi':response[28].positive,  'Missouri':response[26].positive, 'Montana':response[29].positive,
+        'Nebraska':response[32].positive, 'Nevada':response[36].positive,'New Hampshire':response[33].positive, 'New Mexico':response[35].positive, 'New York':response[37].positive,
+        'North Carolina':response[30].positive,'North Dakota':response[31].positive,'Ohio':response[38].positive,'Oklahoma':response[39].positive,'Oregon':response[40].positive,
+        'Pennsylvania':response[41].positive,'Rhode Island':response[43].positive,'South Carolina':response[44].positive, 'South Dakota':response[45].positive,'Tennessee':response[46].positive,
+        'Texas':response[47].positive,'Utah':response[48].positive,'Vermont':response[51].positive, 'Virginia':response[50].positive,  'Washington':response[52].positive, 'West Virginia':response[54].positive,
+        'Wisconsin':response[53].positive,'Wyoming' :response[55].positive,};
+ 
+ 
+ geojson = L.geoJson(usadata, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(mymap);
+
+
+
+
+ var usstates =[{'name':'Alabama','cases':response[1].positive},{'Alaska':response[0].positive},
+
+ {'Arizona':response[4].positive},          {'Arkansas':response[2].positive },         {'California':response[5].positive},
+
+ 
+ {'name':'Colorado','cases':response[6].positive},         {'name':'Connecticut', 'cases':response[5].positive},      {'name':'Delaware', },
+ 
+ {'name':'Florida'},          {'name':'Georgia' },          {'name':'Hawaii' },
+ 
+ {'name':'Idaho',},            {'name':'Illinois'},         {'name':'Indiana'},
+ 
+ {'name':'Iowa',},             {'name':'Kansas', },           {'name':'Kentucky', },
+ 
+ {'name':'Louisiana'},        {'name':'Maine'},            {'name':'Maryland'},
+ 
+ {'name':'Massachusetts',},    {'name':'Michigan', },         {'name':'Minnesota', },
+ 
+ {'name':'Mississippi',},      {'name':'Missouri', },         {'name':'Montana'},
+ 
+ {'name':'Nebraska'},         {'name':'Nevada', },           {'name':'New Hampshire', },
+ 
+ {'name':'New Jersey', },       {'name':'New Mexico', },       {'name':'New York', },
+ 
+ {'name':'North Carolina',},   {'name':'North Dakota'},     {'name':'Ohio',},
+ 
+ {'name':'Oklahoma'},         {'name':'Oregon'},           {'name':'Pennsylvania'},
+ 
+ {'name':'Rhode Island'},     {'name':'South Carolina'},   {'name':'South Dakota'},
+ 
+ {'name':'Tennessee',},        {'name':'Texas'},            {'name':'Utah'},
+ 
+ {'name':'Vermont'},          {'name':'Virginia'},         {'name':'Washington'},
+ 
+ {'name':'West Virginia'},    {'name':'Wisconsin'},        {'name':'Wyoming'}
+ 
+];
+
+ var count = usstates.length;
+ for (i=0; i<count; i++){
+   
+   
+ }
+ //console.log(usstates[0].name);
+ //console.log(usstates[1].cases);
+ console.log(usstates[0]);
+ console.log(usstates[1]);
+ console.log(usstates[2]);
+ console.log(usstates[3]);
+ console.log(usstates[4]);
+ console.log(usstates[5]);
+
+  });
+ var states;
+
+
+  function getColor(d) { 
+    
+    // a function or a code that takes name of the state and comes up with value. instead of d use any function like state
+    return d > 100000 ? '#800026' :
+           d > 50000  ? '#BD0026' :
+           d > 20000 ? '#E31A1C' :
+           d > 10000  ? '#FC4E2A' :
+           d > 5000   ? '#FD8D3C' :
+           d > 2000   ? '#FEB24C' :
+           d > 1000   ? '#FED976' :
                       '#FFEDA0';
 }
+
+// function getColor(name) { 
+  // a function or a code that takes name of the state and comes up with value. instead of d use any function like state
+//     return name > 1000 ? '#800026' :
+//            name > 500  ? '#BD0026' :
+//            name > 200  ? '#E31A1C' :
+//            name > 100  ? '#FC4E2A' :
+//            name > 50   ? '#FD8D3C' :
+//            name > 20   ? '#FEB24C' :
+//            name > 10   ? '#FED976' :
+//                       '#FFEDA0';
+
+
+
+// function style(cases) {
+//     return {
+//         fillColor: getColor(usstates.name.cases), // get the actual raw data.the function will be feature.properties.name
+//         weight: 2,
+//         opacity: 1,
+//         color: 'white',
+//         dashArray: '3',
+//         fillOpacity: 0.7
+//     };
+// }
+
+// L.geoJson(usadata, {style: style}).addTo(mymap);
+
+
+
 
 
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.density), // get the actual raw data.the function will be feature.properties.name
+        fillColor: getColor(states[feature.properties.name]), // get the actual raw data.the function will be feature.properties.name
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -41,12 +158,14 @@ function style(feature) {
     };
 }
 
-L.geoJson(usadata, {style: style}).addTo(mymap);
+
+
+
 
 
 function highlightFeature(e) {
     var layer = e.target;
-
+    info.update(layer.feature.properties);
     layer.setStyle({
         weight: 5,
         color: '#666',
@@ -60,6 +179,7 @@ function highlightFeature(e) {
 }
 
 function resetHighlight(e) {
+    info.update();
     geojson.resetStyle(e.target);
 }
 
@@ -76,34 +196,30 @@ function onEachFeature(feature, layer) {
     });
 }
 
-geojson = L.geoJson(usadata, {
-    style: style,
-    onEachFeature: onEachFeature
-}).addTo(mymap);
-
-
-
-var info = L.control();
-
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
-
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-    this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
-        '<b>' + props.name + '</b><br />' + '27,000' + ' people / mi<sup>2</sup>'
-        : 'Hover over a state');
-};
-
-info.addTo(mymap);
 
 
 
 
 
+
+
+  var info = L.control();
+
+  info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+  };
+  
+  // method that we will use to update the control based on feature properties passed
+  info.update = function (props) {
+      this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
+          '<b>'  + '</b><br />' + states[props.name] + ' cases'
+          : 'Hover over a state');
+  };
+  
+  info.addTo(mymap);
+  
 
 
 
@@ -128,77 +244,6 @@ info.addTo(mymap);
 
 
 
-// Creating custom marker( pirate symbol)
-// var myIcon = L.icon({
-//     iconUrl: 'pirates.png',
-//     iconSize: [30, 30],
-//     iconAnchor: [20,20],
-//     popupAnchor: [-10, -15],
-    
-    
-// });
-
-// var calIcon = L.icon({
-//     iconUrl: 'pirates.png',
-//     iconSize: [30, 30],
-//     iconAnchor: [-30,25],
-//     popupAnchor: [-10, -15],
-    
-    
-// });
-
-//Adding a marker on Utah.
-// L.marker([39.419220, -111.950684], {icon: myIcon}).addTo(mymap);
-
-
-
-// Displays a pop-up message  when you hover over a marker.
-// L.marker([39.419220, -111.950684], {icon: myIcon}).addTo(mymap).bindTooltip("Utah: 25,005.");
-// L.marker([37.1843783,-123.7956171], {icon: myIcon}).addTo(mymap).bindTooltip("California: 271,493.");
-
-// var Alaska = [63.588753,-154.493062];
-
-
-// L.marker(Alaska,{icon:calIcon}).addTo(mymap).bindTooltip("Alaska");
-
-// var	Colorado = [39.550051,-105.782067];
-// L.marker(Colorado,{icon:calIcon}).addTo(mymap).bindTooltip("Colorado");
-
-
-
-
-// var settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://coronavirus-map.p.rapidapi.com/v1/spots/region?region=usa",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
-// 		"x-rapidapi-key": "aa6312c68dmsh577349eb085aef1p1ad893jsna7b038664bee"
-// 	}
-// }
-
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
-
-
-//This is API per country.
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://coronavirus-map.p.rapidapi.com/v1/summary/latest",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
-		"x-rapidapi-key": "aa6312c68dmsh577349eb085aef1p1ad893jsna7b038664bee"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-    console.log(response.data.regions.usa.active_cases);
-});
 
 
 
@@ -208,8 +253,6 @@ $.ajax(settings).done(function (response) {
 
 
 
-
-//console.log(response.data["2020-01-22"].active_cases);
 
 
 
