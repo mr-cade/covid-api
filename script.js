@@ -58,6 +58,13 @@ $("#searchBtn").on("click", function() {
     })
 });
 
+function refreshPopulate () {
+    var fromLocalStorage = JSON.parse(localStorage.getItem("regionSearch"))
+    if (fromLocalStorage != null) {
+      console.log(fromLocalStorage[0].region)}
+    }
+refreshPopulate()
+
 //   pull for worldwide covid stats
 var worldStats = {
 	"async": true,
