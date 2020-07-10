@@ -2,8 +2,11 @@ var localArr = []
 var activeCases = [];
 var deaths = [];
 var recoveries = [];
+    
 // sets up covid query for later ajax pull
-$("#searchBtn").on("click", function() {
+$("#searchBtn").on("click", search)
+
+function search () {
     region = $("#region").val()
 
     var covidQuery = {
@@ -56,14 +59,27 @@ $("#searchBtn").on("click", function() {
     $(".reset").attr({
         "Placeholder": "Region"
     })
-});
+    
+};
 
 function refreshPopulate () {
     var fromLocalStorage = JSON.parse(localStorage.getItem("regionSearch"))
+    console.log(fromLocalStorage)
     if (fromLocalStorage != null) {
-      console.log(fromLocalStorage[0].region)}
+      for (var i = 0; i < fromLocalStorage.length; i++) {
+        localArr.push(fromLocalStorage[i])
+      }
+      console.log(localArr);
+      console.log(localArr[localArr.length -1].region)
+
+      $("#region").val(localArr[localArr.length -1].region)
     }
+}
 refreshPopulate()
+
+if ($("#region").val() != null) {
+    search()
+}
 
 //   pull for worldwide covid stats
 var worldStats = {
