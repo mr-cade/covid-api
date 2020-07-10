@@ -26,6 +26,3 @@ Materialize for CSS framework\
 https://rapidapi.com/Yatko/api/coronavirus-map\
 https://coronavirus-map.p.rapidapi.com/v1/spots/summary\
 https://api.nytimes.com/svc/search/v2/articlesearch.json?\
-
-
- 
