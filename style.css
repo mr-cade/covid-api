@@ -24,7 +24,7 @@ p {
 
 h3 {
     color: rgb(18, 167, 187);
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     font-family: 'Fira Sans', sans-serif;
 }
@@ -164,9 +164,33 @@ li {
     display: none;
 }
 
-.newsByline {
-    color: rgb(28, 91, 209)
+.read{
+    font-size: 12px;
+    background-color: rgba(243, 243, 243, 0.5);
+    padding: 10px;
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.read:hover {
+    background-color: transparent;
+    color: white;
    
+}
+
+.newsTitles {
+    border-top: solid 0.5px rgba(131, 131, 131, 0.315);
+    padding-top: 30px;
+}
+
+.newsByline {
+    color: rgb(77, 76, 76);
+
+}
+
+.abstract{ 
+    color: white;
+  
 }
 
 /*Map*/
