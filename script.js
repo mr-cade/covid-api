@@ -40,25 +40,23 @@ $("#searchBtn").on("click", function() {
         $(".location").append(totalRecovered);    
         $(".location").append(deathToll);
     });
+    
+    function saveSearch () {
+        // creates object and saves to local storage
+        var regionName = $("#region").val()
+        console.log(regionName);
+        var regionSearch = {
+            region : regionName
+          }
+          localArr.push(regionSearch)
+          localStorage.setItem("regionSearch", JSON.stringify(localArr))
+    }
+    saveSearch();
     $("#region").val("")
     $(".reset").attr({
         "Placeholder": "Region"
     })
 });
-
-// // refresh with last location populated
-// // save to local storage
-// function saveSearch () {
-//     // creates object and saves to local storage
-//     var regionName = $("#region").textContent
-//     console.log(regionName);
-//     var regionSearch = {
-//         region : regionName
-//       }
-//       localArr.push(regionSearch)
-//       localStorage.setItem("regionSearch", JSON.stringify(localArr))
-// }
-// saveSearch();
 
 //   pull for worldwide covid stats
 var worldStats = {
@@ -210,19 +208,34 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
+            label: 'Worldwide Deaths',
+            data: deaths,
+            backgroundColor: [
+                'red'
+            ],
+        },
+            
+        {
             label: 'Worldwide Active Covid Cases',
             data: activeCases,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.5)'
+                'yellow'
             ],
-            
+        },
+        {
+            label: 'Worldwide Covid Recoveries',
+            data: recoveries,
+            backgroundColor: [
+                'green'
+            ],
         }]
     },
     options: {
         scales: {
             yAxes: [{
+                overlap: true,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         }
@@ -239,14 +252,14 @@ var myChart = new Chart(ctx, {
             backgroundColor: [
                 'red'
             ],
-            
         }]
     },
     options: {
         scales: {
             yAxes: [{
+                stacked: true,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         }
@@ -269,8 +282,9 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
+                stacked: true,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         }
