@@ -21,11 +21,11 @@ able to see the statistics displayed on the map for the United States.
  
  
 Resources:
-https://leafletjs.com
-https://covidtracking.com/
+https://leafletjs.com 
+https://covidtracking.com/ 
 Chart.js
 jquery
-Materialize for CSS framework
+https://materializecss.com/ : Materialize for CSS framework
 https://rapidapi.com/Yatko/api/coronavirus-map
 https://coronavirus-map.p.rapidapi.com/v1/spots/summary
 https://api.nytimes.com/svc/search/v2/articlesearch.json?
