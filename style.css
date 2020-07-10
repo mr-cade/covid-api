@@ -3,8 +3,8 @@ body {
     background-image: url(./assets/covid-wall.jpg);
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
-    margin: 0;
+    background-position: center center;
+    /* margin: 0; */
     font-family: 'Fira Sans', sans-serif;
 }
 
