@@ -182,9 +182,9 @@ $.ajax({
     // append to DOM
     for (var i = 0; i < 10; i++) {
         var headlineEl = $("<h3 class='newsTitles'>").text(response.response.docs[i].headline.main)
-        var abstractEl = $("<p>").text(response.response.docs[i].abstract)
+        var abstractEl = $("<p class='abstract'>").text(response.response.docs[i].abstract)
         var bylineEl = $("<p class='newsByline'>").text(response.response.docs[i].byline.original)
-        var readLink = $("<a href='" + response.response.docs[i].web_url + "'>" + "Read Here" + "</a>")
+        var readLink = $("<a class='read', href='" + response.response.docs[i].web_url + "'>" + "Read Here" + "</a>")
         $(".newsStories").append(headlineEl);
         $(".newsStories").append(abstractEl);
         $(".newsStories").append(bylineEl);
