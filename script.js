@@ -241,6 +241,30 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+var ctx = document.getElementById('activeCasesChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        datasets: [{
+            label: 'Worldwide Active Covid Cases',
+            data: activeCases,
+            backgroundColor: [
+                'yellow'
+            ],
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero: true,
+                }
+            }]
+        }
+    }
+});
 var ctx = document.getElementById('deathChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
