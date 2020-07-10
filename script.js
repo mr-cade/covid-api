@@ -210,19 +210,35 @@ var myChart = new Chart(ctx, {
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [{
+            label: 'Worldwide Deaths',
+            data: deaths,
+            backgroundColor: [
+                'red'
+            ],
+        },
+            
+        {
             label: 'Worldwide Active Covid Cases',
             data: activeCases,
             backgroundColor: [
                 'yellow'
+            ],
+        },
+        {
+            label: 'Worldwide Covid Recoveries',
+            data: recoveries,
+            backgroundColor: [
+                'green'
             ],
         }]
     },
     options: {
         scales: {
             yAxes: [{
+                overlap: true,
                 ticks: {
                     beginAtZero: true,
-                    max: 5000000
+                    // max: 5000000
                 }
             }]
         }
@@ -244,6 +260,7 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
+                stacked: true,
                 ticks: {
                     beginAtZero: true,
                     max: 5000000
@@ -269,6 +286,7 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
+                stacked: true,
                 ticks: {
                     beginAtZero: true,
                     max: 5000000
