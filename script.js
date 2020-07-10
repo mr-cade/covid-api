@@ -31,8 +31,8 @@ function search () {
         var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
         // create stat elements
-        var activeCases = $("<p>").text("Active cases: " + activePath);
-        var totalCases = $("<p style='color: yellow'>").text("Total cases: " + totalPath);
+        var activeCases = $("<p style='color: yellow'>").text("Active cases: " + activePath);
+        var totalCases = $("<p>").text("Total cases: " + totalPath);
         var totalRecovered = $("<p style='color: green'>").text("Total recoveries: " + recoveredPath);
         var deathToll = $("<p style='color: red'>").text("Total deaths: " + deathPath);
         
