@@ -1,30 +1,34 @@
 # covid-api
-Project 1 app using covid API data
+USER STORY
+As a user I want to be able to navigate through the covid-19 statistics for the whole world and I want to be 
+able to see the statistics displayed on the map for the United States.
 
-## User Story
-As a human in a pandemic, I want to browse Covid data to keep myself safe!
-When I search a geographical area, I see local statistics and a map visualization of the infections along with key performance indicators
+## Acceptance Criteria:
+- WHEN the user hover overs the map of the United State.
+-THEN the user is able to see the total confirmed cases for that particular state.
+ (we should add more acceptance criteria such as  the graphs, enter region . We all can basically add what each of us did)
+-
+ 
+ 
+ 
+ 
+ 
+ ## Division of Labor.
+ Chief Designer: Atima Benett.
+ Charts, news, and stats via API's: Cade Petersen.
+ Map and the API: Rajesh Baduwal.
+ 
+ 
+ 
+Resources:
+https://leafletjs.com 
+https://covidtracking.com/ 
+Chart.js
+jquery
+https://materializecss.com/ : Materialize for CSS framework
+https://rapidapi.com/Yatko/api/coronavirus-map
+https://coronavirus-map.p.rapidapi.com/v1/spots/summary
+https://api.nytimes.com/svc/search/v2/articlesearch.json?
 
-### API's: 
-Google Maps
-coronavirus map
-NYT News Updates
-
-### Tasks
-Create HTML Page(s)
-Add CSS framework styling
-
-JS functionality & API pulls
-realtime stats
-historical data
-trends
-map - confirmed cases by state (perhaps by county)
-geographical hotspots
-cdc/WHO/local public health guidelines & corresponding virus response in that area
-
-
-<img width="2048" alt="Screen Shot 2020-06-27 at 11 05 38 AM" src="https://user-images.githubusercontent.com/61152071/85927891-30048900-b866-11ea-8402-2a3308b373de.png">
-<img width="2048" alt="Screen Shot 2020-06-27 at 11 05 34 AM" src="https://user-images.githubusercontent.com/61152071/85927898-385cc400-b866-11ea-8fe9-8772bc40aea3.png">
-
-
-<img width="2048" alt="Screen Shot 2020-06-27 at 10 58 38 AM" src="https://user-images.githubusercontent.com/61152071/85927825-dbf9a480-b865-11ea-811e-a848c0329bac.png">
+ I am thinking we should add all the links to the sites we got helps from. API websites,maybe the materialize website etc.
+ 
