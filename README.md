@@ -31,10 +31,10 @@ https://mr-cade.github.io/covid-api/
 
 ## Finished Website
 <br>
-![home](https://user-images.githubusercontent.com/64511825/87211293-0c195c80-c2d6-11ea-8948-302148843020.png)
+![home](screen%20shots/home.png)
 <br>
-![news](https://user-images.githubusercontent.com/64511825/87211307-1e939600-c2d6-11ea-8bbc-10bac1cb4f02.png)
+![news](screen%20shots/news.png)
 <br>
-![map](https://user-images.githubusercontent.com/64511825/87211319-2fdca280-c2d6-11ea-90f9-3b7f78e3add4.png)
+![map](screen%20shots/map.png)
 <br>
-![info](https://user-images.githubusercontent.com/64511825/87211332-3ec35500-c2d6-11ea-8dbf-1297cdc63dc9.png)
+![info](screen%20shots/info.png)
