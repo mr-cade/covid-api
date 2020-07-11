@@ -31,10 +31,6 @@ https://mr-cade.github.io/covid-api/
 
 ## Finished Website
 <br>
-![home](screen%20shots/home.png)
-<br>
-![news](screen%20shots/news.png)
-<br>
-![map](screen%20shots/map.png)
-<br>
-![info](screen%20shots/info.png)
+<img width="2048" alt="Screen Shot 2020-07-11 at 9 00 50 AM" src="https://user-images.githubusercontent.com/61152071/87227019-16c70680-c355-11ea-9842-e4cda8609a15.png">
+<img width="2048" alt="Screen Shot 2020-07-11 at 8 58 56 AM" src="https://user-images.githubusercontent.com/61152071/87227022-1a5a8d80-c355-11ea-808a-c0342b201b5c.png">
+<img width="2048" alt="Screen Shot 2020-07-11 at 8 59 01 AM" src="https://user-images.githubusercontent.com/61152071/87227023-1b8bba80-c355-11ea-9be7-f4ae900580f2.png">
