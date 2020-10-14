@@ -13,7 +13,7 @@ L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=wnclmoF7O9y
 
 //Ajax call to get the covid data.
 $.ajax({
-    url: "https://covidtracking.com/api/v1/states/current.json",
+    url: "https://cors-anywhere.herokuapp.com/https://covidtracking.com/api/v1/states/current.json",
     method: "GET"
   })
   .then(function(response) {
@@ -160,8 +160,13 @@ function onEachFeature(feature, layer) {
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
       this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
+
+          '<b>' +props.name + '</b><br />' + states[props.name] + ' cases'
+          : 'Hover over a state ');
+
           '<b>' +props.name + '</b><br />' + Intl.NumberFormat().format(states[props.name]) + ' cases'
           : 'Click on a state');
+
   };
   
   info.addTo(mymap);
