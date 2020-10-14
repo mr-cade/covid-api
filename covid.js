@@ -142,9 +142,9 @@ function zoomToFeature(e) {
 
 function onEachFeature(feature, layer) {
     layer.on({
-        mouseover: highlightFeature,
+        click: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature
+        // click: zoomToFeature
     });
 }
 
@@ -160,8 +160,13 @@ function onEachFeature(feature, layer) {
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
       this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
+
           '<b>' +props.name + '</b><br />' + states[props.name] + ' cases'
           : 'Hover over a state ');
+
+          '<b>' +props.name + '</b><br />' + Intl.NumberFormat().format(states[props.name]) + ' cases'
+          : 'Click on a state');
+
   };
   
   info.addTo(mymap);
