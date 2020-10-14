@@ -4,7 +4,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    /* margin: 0; */
+    margin: 0;
     font-family: 'Fira Sans', sans-serif;
 }
 
@@ -54,47 +54,7 @@ li {
 }
 
 
-/*#chartdiv{
- 
-   margin-left: auto;
-   margin-right: auto;
-   display: block;
-   padding: 300px;
-   height: 500px;
-}
-
-#main, #world-stats {
-    margin: auto;
-    width: 500px;
-    max-width: 100%;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: center;
-}
-
-
-#globalMap, #usMap , #trends {
-    background-color: rgb(117, 117, 117);
-    font-family: 'Fira Sans', sans-serif;
-    color: rgb(39, 39, 39);
-    margin: auto;
-    text-align: center;
-}
-
-
-
-#region {
-    background-color: rgba(243, 243, 243, 0.5);
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 12px;
-    text-align: center;
-}
-
-
-
-
 /*news.html*/
-
 
 .col.s12  .btn {
     width: 100%;
@@ -119,12 +79,10 @@ li {
     width: 20%;
 }
 
-
  #learn-more,#globalMap, #usMap , #trends {
     background-color: rgba(243, 243, 243, 0.5);
     color: black;
     font-family: 'Fira Sans', sans-serif;
-    /* margin-left: 15px; */
     margin-bottom: 20px;
     font-size: 12px;
     width: 90%;
@@ -164,7 +122,7 @@ li {
     display: none;
 }
 
-.read{
+.read {
     font-size: 12px;
     background-color: rgba(243, 243, 243, 0.5);
     padding: 10px;
@@ -179,7 +137,7 @@ li {
 }
 
 .newsTitles {
-    border-top: solid 0.5px rgba(131, 131, 131, 0.315);
+    border-top: solid 0.5px rgba(131, 131, 131, 0.466);
     padding-top: 30px;
 }
 
@@ -209,3 +167,18 @@ li {
     margin: 0 0 5px;
     color: #777;
 }
+
+#color {
+    width: 140px; 
+    height: 140px; 
+    margin: auto; 
+    float: right;
+    margin-top: 10px;
+}
+
+.col l6 s12 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;       
+  }

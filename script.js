@@ -2,8 +2,11 @@ var localArr = []
 var activeCases = [];
 var deaths = [];
 var recoveries = [];
+    
 // sets up covid query for later ajax pull
-$("#searchBtn").on("click", function() {
+$("#searchBtn").on("click", search)
+
+function search () {
     region = $("#region").val()
 
     var covidQuery = {
@@ -28,8 +31,8 @@ $("#searchBtn").on("click", function() {
         var deathPath = new Intl.NumberFormat().format(response.data.summary.deaths);
 
         // create stat elements
-        var activeCases = $("<p>").text("Active cases: " + activePath);
-        var totalCases = $("<p style='color: yellow'>").text("Total cases: " + totalPath);
+        var activeCases = $("<p style='color: yellow'>").text("Active cases: " + activePath);
+        var totalCases = $("<p>").text("Total cases: " + totalPath);
         var totalRecovered = $("<p style='color: green'>").text("Total recoveries: " + recoveredPath);
         var deathToll = $("<p style='color: red'>").text("Total deaths: " + deathPath);
         
@@ -52,18 +55,34 @@ $("#searchBtn").on("click", function() {
           localStorage.setItem("regionSearch", JSON.stringify(localArr))
     }
     saveSearch();
+
+    // resets search box and replaces placeholder
     $("#region").val("")
     $(".reset").attr({
         "Placeholder": "Region"
     })
-});
+    
+};
 
+// This function pulls information for the last searched country upon page refresh
 function refreshPopulate () {
     var fromLocalStorage = JSON.parse(localStorage.getItem("regionSearch"))
+    console.log(fromLocalStorage)
     if (fromLocalStorage != null) {
-      console.log(fromLocalStorage[0].region)}
+      for (var i = 0; i < fromLocalStorage.length; i++) {
+        localArr.push(fromLocalStorage[i])
+      }
+      console.log(localArr);
+      console.log(localArr[localArr.length -1].region)
+
+      $("#region").val(localArr[localArr.length -1].region)
     }
+}
 refreshPopulate()
+
+if ($("#region").val() != null) {
+    search()
+}
 
 //   pull for worldwide covid stats
 var worldStats = {
@@ -98,6 +117,7 @@ $.ajax(worldStats).done(function (response) {
     $(".worldwide").append(deathToll);
 });
 
+// pull for historical data and pushes to the arrays used in charts
 var historicalData = {
     "async": true,
     "crossDomain": true,
@@ -177,8 +197,7 @@ function buildQueryURL() {
   }
   
 var queryURL = buildQueryURL();
-  
-// Make the AJAX request to the API - GETs the JSON data at the queryURL.
+// pulls 10 NYT articles related to covid
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -207,8 +226,9 @@ $("#trends").on("click", function() {
     }
 })
 
-// chart
+// charts
 
+// overlapped
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -248,6 +268,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// active cases chart
 var ctx = document.getElementById('activeCasesChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -272,6 +293,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// death chart
 var ctx = document.getElementById('deathChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -296,6 +318,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+// recovery chart
 var ctx = document.getElementById('recoveryChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
