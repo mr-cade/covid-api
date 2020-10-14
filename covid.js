@@ -13,7 +13,7 @@ L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=wnclmoF7O9y
 
 //Ajax call to get the covid data.
 $.ajax({
-    url: "https://covidtracking.com/api/v1/states/current.json",
+    url: "https://cors-anywhere.herokuapp.com/https://covidtracking.com/api/v1/states/current.json",
     method: "GET"
   })
   .then(function(response) {
@@ -161,7 +161,7 @@ function onEachFeature(feature, layer) {
   info.update = function (props) {
       this._div.innerHTML = '<h4> Confirmed Cases</h4>' +  (props ?
           '<b>' +props.name + '</b><br />' + states[props.name] + ' cases'
-          : 'Hover over a state');
+          : 'Hover over a state ');
   };
   
   info.addTo(mymap);
